@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'BritishInseratMN';
+  src: url("../font/font.woff") format("woff");
+}
+
+body {
+  color: #000;
+  font-family: 'Noto Sans JP', 'Noto Sans CJK JP', 'Noto Sans Japanese', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+
+  img {
+    width: 100%;
+    vertical-align: bottom;
+    @include mediaQuery() {
+      width: 50%;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  header {
+    nav {
+      ul {
+        display: flex;
+      }
+      li {
+        
+        text-align: center;
+        display: block;
+        font-size: 28px;
+        font-family: 'BritishInseratMN', sans-serif;
+        font-weight: 400;
+        letter-spacing: -1px;
+        line-height: .8;
+        margin: 0 4px;
+        padding: 14px 0 14px;
+      }
+      a {
+        font-family: 'BritishInseratMN', sans-serif;
+        display: block;
+        color: rgba(26,26,26,0.15);
+      }
+    }
+  }
+  main {
+    .bl_news {
+      margin-left: 20px;
+      padding: 5px 0 10px;
+      position: relative;
+      top: -20px;
+      z-index: 1;
+      background-color: #fff;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+      .bl_news_date {
+        width: 80px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 13px;
+        line-height: 1;
+        letter-spacing: 0;
+        font-weight: 700;
+        text-align: center;
+        color: rgba(26,26,26,0.45);
+        &:after {
+          content: "NEW";
+          display: inline-block;
+          width: 50px;
+          height: 18px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 1;
+          letter-spacing: 2px;
+          margin: 3px auto 0;
+          padding: 2px 0 0 2px;
+          color: #fff;
+          background-color: #B49B6C;
+          animation: news-label 2s infinite;
+        }
+      }
+      @keyframes news-label {
+        0% {
+          transform: scale(1);
+        }
+        10% {
+          transform: scale(0.9);
+        }
+        20% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .bl_news_title {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 19px;
+        padding: 18px 15px 18px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.16);
+        width: calc(100% - 80px);
+      }
+    }
+  }
+}
+

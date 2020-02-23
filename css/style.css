@@ -1,0 +1,225 @@
+@charset "UTF-8";
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+/* ============================================================================
+
+ _responsive.scss
+ 
+ レスポンシブにする上で必要なものまとめ
+
+============================================================================ */
+/*
+ * メディアクエリ mixin
+ * 変数$breakpointsだけはややこしくなるのでここで定義
+ */
+/*
+ * デバイス毎に表示をコントロールするクラス
+ */
+@media screen and (max-width: 992px) {
+  .mod-disyplayNone_mobile {
+    display: none !important; } }
+
+@media screen and (max-width: 749px) {
+  .mod-disyplayNone_mobile_only {
+    display: none !important; } }
+
+@media screen and (min-width: 750px) and (max-width: 992px) {
+  .mod-disyplayNone_tablet {
+    display: none !important; } }
+
+@media screen and (min-width: 993px) {
+  .mod-disyplayNone_desktop {
+    display: none !important; } }
+
+@font-face {
+  font-family: 'BritishInseratMN';
+  src: url("../font/font.woff") format("woff"); }
+
+body {
+  color: #000;
+  font-family: 'Noto Sans JP', 'Noto Sans CJK JP', 'Noto Sans Japanese', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif; }
+  body img {
+    width: 100%;
+    vertical-align: bottom; }
+    @media screen and (min-width: 993px) {
+      body img {
+        width: 50%; } }
+  body ul {
+    list-style: none; }
+  body a {
+    text-decoration: none;
+    color: #000; }
+  body header nav li {
+    text-align: center;
+    display: block;
+    font-size: 28px;
+    font-family: 'BritishInseratMN', sans-serif;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: .8;
+    margin: 0 4px;
+    padding: 14px 0 14px; }
+  body header nav a {
+    font-family: 'BritishInseratMN', sans-serif;
+    display: block;
+    color: rgba(26, 26, 26, 0.15); }
+  body main .bl_news {
+    margin-left: 20px;
+    padding: 5px 0 10px;
+    position: relative;
+    top: -20px;
+    z-index: 1;
+    background-color: #fff; }
+    body main .bl_news a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      text-decoration: none; }
+    body main .bl_news .bl_news_date {
+      width: 80px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 700;
+      text-align: center;
+      color: rgba(26, 26, 26, 0.45); }
+      body main .bl_news .bl_news_date:after {
+        content: "NEW";
+        display: inline-block;
+        width: 50px;
+        height: 18px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 2px;
+        margin: 3px auto 0;
+        padding: 2px 0 0 2px;
+        color: #fff;
+        background-color: #B49B6C;
+        -webkit-animation: label-news 2s infinite;
+                animation: label-news 2s infinite; }
+
+@-webkit-keyframes label-news {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  10% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
+  20% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes label-news {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  10% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
+  20% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+    body main .bl_news .bl_news_title {
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 19px;
+      padding: 18px 15px 18px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+      width: calc(100% - 80px); }

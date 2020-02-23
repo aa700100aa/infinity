@@ -17,6 +17,11 @@
     "type": "git",
     "url": "git@github.com.kadai:aa700100aa/infinity.git"
   },
+  "browserslist": [
+    "last 2 version",
+    "> 5%",
+    "ie >= 11"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC"
