@@ -135,19 +135,41 @@ body {
   body a {
     text-decoration: none;
     color: #000; }
+  body header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+    -ms-scroll-chaining: none;
+        overscroll-behavior: contain;
+    padding: 0 6px; }
   body header nav li {
+    position: relative;
     text-align: center;
-    display: block;
+    display: inline-block;
     font-size: 28px;
     font-family: 'BritishInseratMN', sans-serif;
-    font-weight: 400;
     letter-spacing: -1px;
     line-height: .8;
-    margin: 0 4px;
-    padding: 14px 0 14px; }
+    padding: 14px 4px 14px; }
+    body header nav li.is-active {
+      -webkit-transform: translateY(-5px);
+          -ms-transform: translateY(-5px);
+              transform: translateY(-5px); }
+      body header nav li.is-active a {
+        color: #000; }
+      body header nav li.is-active:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: #000; }
   body header nav a {
     font-family: 'BritishInseratMN', sans-serif;
-    display: block;
     color: rgba(26, 26, 26, 0.15); }
   body main .bl_news {
     margin-left: 20px;
@@ -186,10 +208,10 @@ body {
         padding: 2px 0 0 2px;
         color: #fff;
         background-color: #B49B6C;
-        -webkit-animation: label-news 2s infinite;
-                animation: label-news 2s infinite; }
+        -webkit-animation: news-label 2s infinite;
+                animation: news-label 2s infinite; }
 
-@-webkit-keyframes label-news {
+@-webkit-keyframes news-label {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1); }
@@ -203,7 +225,7 @@ body {
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
-@keyframes label-news {
+@keyframes news-label {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1); }
@@ -223,3 +245,34 @@ body {
       padding: 18px 15px 18px 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.16);
       width: calc(100% - 80px); }
+    body main .bl_news .bl_news_button {
+      position: relative;
+      width: 100%;
+      height: 54px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      background-color: #000; }
+      body main .bl_news .bl_news_button a {
+        color: #fff;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: bold;
+        padding: 0 20px; }
+        body main .bl_news .bl_news_button a span {
+          padding: 0 18px 0 0; }
+          body main .bl_news .bl_news_button a span:after {
+            background-image: url("./images/arrow_wh.svg");
+            content: "";
+            position: absolute;
+            display: block;
+            width: 18px;
+            height: 100%;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat; }
