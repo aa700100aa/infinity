@@ -1,0 +1,89 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'BritishInseratMN';
+  src: url("../font/font.woff") format("woff"); }
+
+body {
+  color: #000;
+  font-family: 'Noto Sans JP', 'Noto Sans CJK JP', 'Noto Sans Japanese', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif; }
+  body img {
+    width: 100%;
+    vertical-align: bottom; }
+  body ul {
+    list-style: none; }
+  body header nav ul li a {
+    font-family: 'BritishInseratMN', sans-serif; }
+  body main .bl_news {
+    margin-left: 20px;
+    padding: 5px 0 10px;
+    position: relative;
+    top: -20px;
+    z-index: 1;
+    background-color: #fff; }
+    body main .bl_news a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      text-decoration: none; }
+    body main .bl_news_date {
+      width: 80px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 700;
+      text-align: center;
+      color: rgba(26, 26, 26, 0.45); }
+      body main .bl_news_date:after {
+        content: "NEW";
+        display: inline-block;
+        width: 50px;
+        height: 18px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 2px;
+        margin: 3px auto 0;
+        padding: 2px 0 0 2px;
+        color: #fff;
+        background-color: #B49B6C;
+        -webkit-animation: label-news 2s infinite;
+                animation: label-news 2s infinite; }
+
+@-webkit-keyframes label-news {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  10% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
+  20% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes label-news {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  10% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
+  20% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+    body main .bl_news_title {
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 19px;
+      padding: 18px 15px 18px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+      width: calc(100% - 80px); }
