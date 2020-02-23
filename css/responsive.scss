@@ -1,0 +1,53 @@
+/* ============================================================================
+
+ _responsive.scss
+ 
+ レスポンシブにする上で必要なものまとめ
+
+============================================================================ */
+
+/*
+ * メディアクエリ mixin
+ * 変数$breakpointsだけはややこしくなるのでここで定義
+ */
+
+ $breakpoints: (
+  'mobile': 'screen and (max-width: 992px)',
+  'mobileOnly': 'screen and (max-width: 749px)',
+  'tablet': 'screen and (min-width: 750px) and (max-width: 992px)',
+  'desktop': 'screen and (min-width: 993px)',
+) !default;
+
+@mixin mediaQuery($breakpoint: desktop) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/*
+ * デバイス毎に表示をコントロールするクラス
+ */
+
+.mod-disyplayNone_mobile {
+  @include mediaQuery($breakpoint: mobile) {
+    display: none !important;
+  }
+}
+
+.mod-disyplayNone_mobile_only {
+  @include mediaQuery($breakpoint: mobileOnly) {
+    display: none !important;
+  }
+}
+
+.mod-disyplayNone_tablet {
+  @include mediaQuery($breakpoint: tablet) {
+    display: none !important;
+  }
+}
+
+.mod-disyplayNone_desktop {
+  @include mediaQuery() {
+    display: none !important;
+  }
+}

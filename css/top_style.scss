@@ -10,6 +10,9 @@ body {
   img {
     width: 100%;
     vertical-align: bottom;
+    @include mediaQuery() {
+      width: 50%;
+    }
   }
   ul {
     list-style: none;
