@@ -7,11 +7,11 @@
     <title>関ジャニ∞ (エイト) / INFINITY RECORDS 公式サイト</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="js/slick-theme.css" rel="stylesheet" type="text/css">
-　  <link href="js/slick.css" rel="stylesheet" type="text/css">
-　  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-　  <script type="text/javascript" src="js/slick.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/index.js"></script>
   </head>
   <body>
     <header>
@@ -28,51 +28,91 @@
       </nav>
     </header>
     <main>
-      <section>
+      <div>
         <h1>
           <picture>
-            <source media="(max-width: 750px)" srcset="./images/index_hero.jpg">
-            <img src="./images/index_hero.jpg" alt="関ジャニ∞">
+            <source media="(max-width: 750px)" srcset="images/index_hero.jpg">
+            <img src="images/index_hero.jpg" alt="関ジャニ∞">
           </picture>
         </h1>
-      </section>
-      <section class='bl_news'>
+      </div>
+      <div class='news'>
         <ul>
           <li>
             <a href="#">
-              <p class="bl_news_date">2020.02.03</p>
-              <p class="bl_news_title">2月14日（金）[徳島] 鳴門市文化会館会場　CD・DVD・BD販売時間についてのお知らせ</p>
+              <p class="news_date">2020.02.03</p>
+              <p class="news_title">2月14日（金）[徳島] 鳴門市文化会館会場　CD・DVD・BD販売時間についてのお知らせ</p>
             </a>
           </li>
           <li>
             <a href="#">
-              <p class="bl_news_date">2020.02.03</p>
-              <p class="bl_news_title">2月14日（金）[香川] レクザムホール（香川県県民ホール）会場　CD・DVD・BD販売時間についてのお知ら</p>
+              <p class="news_date">2020.02.03</p>
+              <p class="news_title">2月14日（金）[香川] レクザムホール（香川県県民ホール）会場　CD・DVD・BD販売時間についてのお知ら</p>
             </a>
           </li>
           <li>
             <a href="#">
-              <p class="bl_news_date">2020.02.03</p>
-              <p class="bl_news_title">2月12日（水）[山口] 周南市文化会館会場　CD・DVD・BD販売時間についてのお知らせ</p>
+              <p class="news_date">2020.02.03</p>
+              <p class="news_title">2月12日（水）[山口] 周南市文化会館会場　CD・DVD・BD販売時間についてのお知らせ</p>
             </a>
           </li>
         </ul>
-        <div class="bl_news_button">
+        <div class="commonButton">
           <a href="#">
             <span>NEWS ALL</span>
+            <img src="images/arrow_wh.svg" alt="image01">
           </a>
         </div>
-      </section>
-      <ul class="slider">
-          <li><a href="#"><img src="images/01.jpg" alt="image01"></a></li>
-          <li><a href="#"><img src="images/02.jpg" alt="image02"></a></li>
-          <li><a href="#"><img src="images/03.jpg" alt="image03"></a></li>
-          <li><a href="#"><img src="images/04.jpg" alt="image04"></a></li>
-          <li><a href="#"><img src="images/05.jpg" alt="image05"></a></li>
-          <li><a href="#"><img src="images/06.jpg" alt="image06"></a></li>
-          <li><a href="#"><img src="images/07.jpg" alt="image07"></a></li>
-          <li><a href="#"><img src="images/08.jpg" alt="image08"></a></li>
-      </ul>
+      </div>
+      <div class='video'>
+        <ul class="js-videoSlider">
+          <li>
+            <div class='video_content'>
+                <p class="btn"><a class="click01" href="#popup01">モーダルクリック</a></p>
+
+                <!-- モーダル表示する要素 -->
+                <div id="popup01" class="mfp-hide">
+                  <!-- ここにモーダル表示したい内容 -->
+                  <video playsinline="" muted="muted" loop="loop" autoplay="autoplay" controlslist="nodownload" poster="https://www.infinity-r.jp/wp-content/uploads/2019/11/tomoyo_spot.jpg" preload="none">
+                    <source src="video/sample1.mp4" type="video/mp4">
+                  </video>
+                  <span class="popup-closebtn"></span>
+                </div>
+              <video playsinline="" muted="muted" loop="loop" autoplay="autoplay" controlslist="nodownload" poster="https://www.infinity-r.jp/wp-content/uploads/2019/11/tomoyo_spot.jpg" preload="none">
+                <source src="video/sample1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="video_detail">
+              <h3 class="video_title">「CREMEAN CAVES」</h3>
+              <p class="video_time">04:32</p>
+            </div>
+          </li>
+          <li>           
+            <video playsinline="" muted="muted" loop="loop" autoplay="autoplay" controlslist="nodownload" poster="https://www.infinity-r.jp/wp-content/uploads/2019/11/tomoyo_spot.jpg" preload="none">
+              <source src="video/sample2.mp4" type="video/mp4">
+            </video>
+            <div class="video_detail">
+              <h3 class="video_title">「a film by FKY」</h3>
+              <p class="video_time">02:57</p>
+            </div>
+          </li>
+          <li>
+            <video playsinline="" muted="muted" loop="loop" autoplay="autoplay" controlslist="nodownload" poster="https://www.infinity-r.jp/wp-content/uploads/2019/11/tomoyo_spot.jpg" preload="none">
+              <source src="video/sample3.mp4" type="video/mp4">
+            </video>
+            <div class="video_detail">
+              <h3 class="video_title">「ICELAND」</h3>
+              <p class="video_time">03:01</p>
+            </div>
+          </li>
+        </ul>
+        <div class="commonButton">
+          <a href="#">
+            <span>MOVIE ALL</span>
+            <img src="images/arrow_wh.svg" alt="image01">
+          </a>
+        </div>
+      </div>
     </main>
     <footer>
       文書のフッター

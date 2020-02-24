@@ -15,6 +15,11 @@ body {
     }
   }
 
+  video {
+    width: 100%;
+    vertical-align: bottom;
+  }
+
   ul {
     list-style: none;
   }
@@ -22,6 +27,33 @@ body {
   a {
     text-decoration: none;
     color: #000;
+  }
+
+  .commonButton {
+    position: relative;
+    width: 100%;
+    height: 54px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #000;
+    a {
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: bold;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      span {
+        padding-right: 4px;
+        line-height: 1.6;
+        letter-spacing: 1px;
+        font-size: 15px;
+      }
+      img {
+        width: 14px;
+      }
+    }
   }
 
   header {
@@ -67,7 +99,7 @@ body {
     }
   }
   main {
-    .bl_news {
+    .news {
       margin-left: 20px;
       padding: 5px 0 10px;
       position: relative;
@@ -79,7 +111,7 @@ body {
         align-items: center;
         text-decoration: none;
       }
-      .bl_news_date {
+      .news_date {
         width: 80px;
         font-family: 'Barlow Condensed', sans-serif;
         font-size: 13px;
@@ -118,7 +150,7 @@ body {
           transform: scale(1);
         }
       }
-      .bl_news_title {
+      .news_title {
         font-size: 13px;
         font-weight: bold;
         line-height: 19px;
@@ -126,34 +158,58 @@ body {
         border-bottom: 1px solid rgba(0,0,0,0.16);
         width: calc(100% - 80px);
       }
-      .bl_news_button {
+    }
+    .video {
+      position: relative;
+      .slick-arrow {
         position: relative;
-        width: 100%;
+        display: inline-block;
+        background-color: #fff;
+        width: 54px;
         height: 54px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        background-color: #000;
-        a {
-          color: #fff;
-          font-family: 'Barlow Condensed', sans-serif;
-          font-weight: bold;
-          padding: 0 20px;
-          span {
-            padding: 0 18px 0 0;
-            &:after {
-              background-image: url("./images/arrow_wh.svg");
-              content: "";
-              position: absolute;
-              display: block;
-              width: 18px;
-              height: 100%;
-              background-size: contain;
-              background-position: center center;
-              background-repeat: no-repeat;
-            }
-          }
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 20px;
         }
+      }
+      .prevArrow {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        transform: rotate(180deg);
+      }
+      .nextArrow {
+        position: relative;
+        z-index: 2;
+        left: 54px;
+        bottom: -1px;
+      }
+      .video_detail {
+        padding: 20px;
+        background-color: #1c1c1c;
+      }
+      h3 {
+        height: 48px;
+        font-size: 16px;
+        line-height: 19px;
+        margin: 0 0 15px;
+        font-weight: 400;
+        transition: all .6s .4s;
+        color: #fff;
+      }
+      p {
+        font-size: 13px;
+        transition: all .6s .4s;
+        color: #A2A2A2;
+      }
+      .commonButton {
+        position: absolute;
+        bottom: 1px;
+        z-index: 1;
       }
     }
   }
