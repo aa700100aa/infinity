@@ -12,12 +12,13 @@ $(function() {
   //magnificPopup
   $('.js-popUp').each(function () {
     $(this).magnificPopup({
-      mainClass: 'mfp-fade mod-popupMovie no-scroll',
+      mainClass: 'mod-popupMovie',
       items:{
         src: $(this).find('.js-video'),
         type: 'inline'
       },
       closeBtnInside: false,
+      removalDelay: 250,
       callbacks: {
         open: function () {
           // PCでマウスホイールでのスクロール操作の制御
@@ -32,7 +33,7 @@ $(function() {
           $("body").css('touch-action', 'none');
           // 全てのスクロール操作の制御（ウィンドウ表示域で固定）
           $("body").css('overflow', 'hidden');
-
+          setTimeout(add, 10);
         },
         close: function () {
           var video = document.querySelectorAll('.js-video');
@@ -44,11 +45,19 @@ $(function() {
           $(document).off('.noScroll');
           $("body").css('overflow', 'auto');
           $("body").css('touch-action', 'auto');
+          setTimeout(remove, 10);
         }
       }
     });
   });
 });
+var add = function(){
+  $(".js-video").addClass("add-fadeIn");
+};
+var remove = function(){
+  $(".js-video").removeClass("add-fadeIn");
+};
+
 $('.js-popUp').click(function() {
   // PCでマウスホイールでのスクロール操作の制御
   $(window).on('wheel',function(e){
@@ -83,8 +92,8 @@ function responsive() {
 
 $(function(){
   setTimeout(function(){
-  $(".js-openingAnimation").css("display", "none");
-  }, 1500);//約4秒後に
+    $(".js-openingAnimation").css("display", "none");
+  }, 1400);//約4秒後に
   setTimeout(function(){
     $(".p-index__overlay-grids").css("display", "none");
   }, 2700);//約4秒後に
@@ -94,20 +103,27 @@ $(function(){
   responsive();
   var countup = function(){
     if ($(".infomation").hasClass('text1')) {
-      $(".infomation .info li").html("<p>関ジャニ∞アプリで、関ジャニ∞を持ち歩こう！</p>");
+      $(".infomation .info li").html("<p>関ジャニ&infin;アプリで、関ジャニ&infin;を持ち歩こう！</p>");
       $(".infomation").addClass("text2");
       $(".infomation").removeClass("text1");
+      $(".infomation .info").parent().find(".border").css("opacity", "1");
     } else if($(".infomation").hasClass('text2')){
       $(".infomation .info li").html("<p>ニューシングル「友よ」発売中！</p>");
       $(".infomation").addClass("text3");
       $(".infomation").removeClass("text2");
+      $(".infomation .info").parent().find(".border").css("opacity", "1");
     } else {
       $(".infomation .info li").html("<img src='images/logo_typo.svg' alt='image01'>");
       $(".infomation").addClass("text1");
       $(".infomation").removeClass("text3");
+      $(".infomation .info").parent().find(".border").css("opacity", "0");
     }
   } 
   setInterval(countup, 7000);
+});
+
+$(".contentsLink_list").scroll(function() {
+  console.log($(this).scrollLeft());
 });
 
 $(window).resize(function(){
