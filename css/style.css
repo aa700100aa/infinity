@@ -1555,8 +1555,7 @@ body {
     body main .video li {
       position: relative; }
     body main .video .video_content {
-      position: relative;
-      height: calc(100vw * 0.56); }
+      position: relative; }
       @media screen and (min-width: 750px) {
         body main .video .video_content {
           height: 595px; } }
@@ -1574,12 +1573,12 @@ body {
         background-color: #fff;
         border-radius: 50%; }
       body main .video .video_content video {
-        width: 100vw;
-        position: absolute;
-        top: 0; }
+        width: 100vw; }
+        @media screen and (max-width: 749px) {
+          body main .video .video_content video {
+            height: calc(100vw * 0.56); } }
         @media screen and (min-width: 750px) {
           body main .video .video_content video {
-            width: 100vw;
             position: absolute;
             top: 50%;
             -webkit-transform: translateY(-50%);

@@ -878,7 +878,6 @@ body {
       }
       .video_content {
         position: relative;
-        height: calc(100vw * 0.56);
         @include mediaQuery(desktopFollow) {
           height: 595px;
         }
@@ -897,10 +896,10 @@ body {
         }
         video {
           width: 100vw;
-          position: absolute;
-          top: 0;
+          @include mediaQuery(mobileOnly) {
+            height: calc(100vw * 0.56);
+          }
           @include mediaQuery(desktopFollow) {
-            width: 100vw;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
