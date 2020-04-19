@@ -47,7 +47,7 @@
   }
 }
 
-.mod-disyplayNone_tablet {
+.mod-disyplayNone_desktopFollow {
   @include mediaQuery($breakpoint: desktopFollow) {
     display: none !important;
   }

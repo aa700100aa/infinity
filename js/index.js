@@ -1,15 +1,19 @@
-$(function() {
+$(document).ready(function(){
+  /*---------------------------------------------
+    動画コンテンツ
+  -----------------------------------------------*/
+  //スライダー
   $('.js-videoSlider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       initialSlide: 0,
       speed: 275,
       arrows: true,
-      prevArrow: "<div class='prevArrow'><img src='images/arrow_bk.svg' alt='image01'></div>",
-      nextArrow: "<div class='nextArrow'><img src='images/arrow_bk.svg' alt='image01'></div>",
+      prevArrow: "<div class='prevArrow'><img src='images/arrow_bk.svg' alt=''></div>",
+      nextArrow: "<div class='nextArrow'><img src='images/arrow_bk.svg' alt=''></div>",
       infinite: false,
   });
-  //magnificPopup
+  //ポップアップ
   $('.js-popUp').each(function () {
     $(this).magnificPopup({
       mainClass: 'mod-popupMovie',
@@ -18,8 +22,9 @@ $(function() {
         type: 'inline'
       },
       closeBtnInside: false,
-      removalDelay: 250,
+      removalDelay: 1000,
       callbacks: {
+        // ポップアップ時の処理
         open: function () {
           // PCでマウスホイールでのスクロール操作の制御
           $(window).on('wheel',function(e){
@@ -33,102 +38,110 @@ $(function() {
           $("body").css('touch-action', 'none');
           // 全てのスクロール操作の制御（ウィンドウ表示域で固定）
           $("body").css('overflow', 'hidden');
-          setTimeout(add, 10);
+          //フェードイン
+          setTimeout(function(){
+            $(".js-video").addClass("add-fadeIn");
+          }, 100);
         },
+        // ポップアップクローズ時の処理
         close: function () {
           var video = document.querySelectorAll('.js-video');
           for (let i = 0; i < video.length; i++) {
             video[i].pause();
           }
+          $(".js-video").removeClass("add-fadeIn");
           //スクロール操作禁止解除
           $(window).off('wheel');
           $(document).off('.noScroll');
           $("body").css('overflow', 'auto');
           $("body").css('touch-action', 'auto');
-          setTimeout(remove, 10);
         }
       }
     });
   });
 });
-var add = function(){
-  $(".js-video").addClass("add-fadeIn");
-};
-var remove = function(){
-  $(".js-video").removeClass("add-fadeIn");
-};
-
-$('.js-popUp').click(function() {
-  // PCでマウスホイールでのスクロール操作の制御
-  $(window).on('wheel',function(e){
-    e.preventDefault();
-  });
-// モバイル端末でのタッチスクロール操作の制御
-  $(window).on('touchmove.noScroll',function(e){
-    e.preventDefault();
-  });
-// 全てのスクロール操作の制御（ウィンドウ表示域で固定）
-  $("body").css('overflow','hidden');
-})
-
-var mediaQuery_width1125 = window.matchMedia("screen and (max-width: 1125px)");
-var mediaQuery_width750 = window.matchMedia("screen and (min-width: 750px)");
-var mediaQuery_height630 = window.matchMedia("screen and (min-height: 630px)");
-
-function responsive() {
-  if (mediaQuery_width1125.matches && mediaQuery_height630.matches) {
-    $(".nav").css("right", "701px");
-    $(".nav").css("left", "auto");
-  } else {
-    $(".nav").css("left", "11.3%");
-    $(".nav").css("right", "auto");
-  }
-  if (mediaQuery_width750.matches) {
+/*---------------------------------------------
+  ナビのテキスト変更
+-----------------------------------------------*/
+function navTextChange() {
+  if (window.matchMedia('(min-width:750px)').matches) {
     $("nav ul li:nth-child(5) a").html("LIVE/STAGE");
   } else {
     $("nav ul li:nth-child(5) a").html("LIVE");
   }
 }
+/*---------------------------------------------
+  ヘッダーの高さ調整
+-----------------------------------------------*/
+function headerAjust() {
+  $("body").css("margin-top", $("header").height());
+}
 
-$(function(){
-  setTimeout(function(){
+$(function () {
+  /*---------------------------------------------
+    オープニング処理
+  -----------------------------------------------*/
+  setTimeout(function () {
     $(".js-openingAnimation").css("display", "none");
-  }, 1400);//約4秒後に
-  setTimeout(function(){
-    $(".p-index__overlay-grids").css("display", "none");
-  }, 2700);//約4秒後に
-  setTimeout(function(){
-    $(".nav li a").css("transform", "translateY(0)");
-  }, 2000);//約4秒後に
-  responsive();
-  var countup = function(){
-    if ($(".infomation").hasClass('text1')) {
-      $(".infomation .info li").html("<p>関ジャニ&infin;アプリで、関ジャニ&infin;を持ち歩こう！</p>");
-      $(".infomation").addClass("text2");
-      $(".infomation").removeClass("text1");
-      $(".infomation .info").parent().find(".border").css("opacity", "1");
-    } else if($(".infomation").hasClass('text2')){
-      $(".infomation .info li").html("<p>ニューシングル「友よ」発売中！</p>");
-      $(".infomation").addClass("text3");
-      $(".infomation").removeClass("text2");
-      $(".infomation .info").parent().find(".border").css("opacity", "1");
+  }, 1200);
+  setTimeout(function () {
+    $(".js-heroOverlayGrids").css("display", "none");
+  }, 2700);
+  setTimeout(function () {
+    $(".js-heroNav li a").css("transform", "translateY(0)");
+  }, 2000);
+  setTimeout(function () {
+    $(".js-heroNews").css("transform", "translateX(0)");
+  }, 2000);
+  //headerテキスト切り替え開始タイミング
+  if (window.matchMedia('(max-width:749px)').matches) {
+    setTimeout(function () {
+      $(".js-headerDetail li").addClass("add-headerDetail");
+    }, 3500);
+  } else {
+    setTimeout(function () {
+      $(".js-headerDetail li").addClass("add-headerDetail");
+    }, 3500);
+  }
+  if (window.matchMedia('(max-width:749px)').matches) {
+    setTimeout(function () {
+      $(".hero h1 img").css("transform", "translateX(0)");
+      $(".hero h1 img").css("transform", "scale(1)");
+    }, 1000);
+  } else {
+    setTimeout(function () {
+      $(".hero h1 img").css("transform", "translateX(0)");
+      $(".hero h1 img").css("transform", "scale(1)");
+    }, 2000);
+  }
+  /*---------------------------------------------
+    header 文字切り替え
+  -----------------------------------------------*/
+  setInterval(function() {
+    if ($(".js-headerInfomation").hasClass('add-firstText')) {
+      $(".js-headerDetail li").html("<p>関ジャニ&infin;アプリで、関ジャニ&infin;を持ち歩こう！</p>");
+      $(".js-headerInfomation").addClass("add-secondText");
+      $(".js-headerInfomation").removeClass("add-firstText");
+      $(".js-headerDetail").parent().find(".js-headerBorder").css("opacity", "1");
+    } else if ($(".js-headerInfomation").hasClass('add-secondText')) {
+      $(".js-headerDetail li").html("<p>ニューシングル「友よ」発売中！</p>");
+      $(".js-headerInfomation").addClass("add-thirdText");
+      $(".js-headerInfomation").removeClass("add-secondText");
+      $(".js-headerDetail").parent().find(".js-headerBorder").css("opacity", "1");
     } else {
-      $(".infomation .info li").html("<img src='images/logo_typo.svg' alt='image01'>");
-      $(".infomation").addClass("text1");
-      $(".infomation").removeClass("text3");
-      $(".infomation .info").parent().find(".border").css("opacity", "0");
+      $(".js-headerDetail li").html("<img src='images/header_logo_200419.svg' alt='関ジャニ&infin; (エイト)'>");
+      $(".js-headerInfomation").addClass("add-firstText");
+      $(".js-headerInfomation").removeClass("add-thirdText");
+      $(".js-headerDetail").parent().find(".js-headerBorder").css("opacity", "0");
     }
-  } 
-  setInterval(countup, 7000);
-});
-
-$(".contentsLink_list").scroll(function() {
-  console.log($(this).scrollLeft());
+  }, 7000);
+  navTextChange();
+  headerAjust();
 });
 
 $(window).resize(function(){
-  responsive();
-  return false;
+  navTextChange();
+  headerAjust();
 });
 
 $(window).scroll(function (){
@@ -140,7 +153,6 @@ $(window).scroll(function (){
       $(this).addClass("add-slideIn");
      }
   });
-
   $(".js-fadeIn").each(function(){
     var imgPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
@@ -149,12 +161,21 @@ $(window).scroll(function (){
      $(this).addClass("add-fadeIn");
     }
   });
+  $(".profile").each(function(){
+    var imgPos = $(this).offset().top;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > imgPos - windowHeight){
+     $(this).addClass("add-opacity");
+    }
+  });
 });
-
+/*---------------------------------------------
+  読み込み時にページの一番上を指定
+-----------------------------------------------*/
 $(document).ready(function(){
   $('html,body').animate({ scrollTop: 0 }, '1');
 });
 $(function() {
   $('html,body').animate({ scrollTop: 0 }, '1');
 });
-    
