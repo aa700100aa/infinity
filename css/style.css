@@ -662,8 +662,8 @@ header {
               animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 3750ms; }
       @media screen and (max-width: 749px) {
         header .header_infomation .header_border {
-          -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 3250ms;
-                  animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 3250ms; } }
+          -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 3450ms;
+                  animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 3450ms; } }
       @media screen and (min-width: 750px) and (max-width: 992px) {
         header .header_infomation .header_border {
           left: calc(2.4vw + 66px); } }
@@ -757,14 +757,10 @@ header {
             padding-left: 24px;
             height: 72px; } }
         header .header_infomation .header_detail li.add-headerDetail {
-          -webkit-animation: header_detail 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite forwards;
-                  animation: header_detail 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite forwards; }
-          @media screen and (max-width: 749px) {
-            header .header_infomation .header_detail li.add-headerDetail {
-              -webkit-animation: header_detail 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) -750ms infinite forwards;
-                      animation: header_detail 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) -750ms infinite forwards; } }
+          -webkit-animation: header_detail_desktop 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite forwards;
+                  animation: header_detail_desktop 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite forwards; }
 
-@-webkit-keyframes header_detail {
+@-webkit-keyframes header_detail_desktop {
   0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -808,7 +804,7 @@ header {
     -webkit-animation-play-state: paused;
             animation-play-state: paused; } }
 
-@keyframes header_detail {
+@keyframes header_detail_desktop {
   0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -846,6 +842,98 @@ header {
     -webkit-animation-play-state: paused;
             animation-play-state: paused; }
   60% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; } }
+          @media screen and (max-width: 749px) {
+            header .header_infomation .header_detail li.add-headerDetail {
+              -webkit-animation: header_detail_mobile 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) -600ms infinite forwards;
+                      animation: header_detail_mobile 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) -600ms infinite forwards; } }
+
+@-webkit-keyframes header_detail_mobile {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+  35% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+  37% {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+  38% {
+    -webkit-animation-play-state: running;
+            animation-play-state: running; }
+  39% {
+    opacity: 1; }
+  40% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; }
+  60% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0; }
+  61% {
+    opacity: 1; }
+  62% {
+    -webkit-animation-play-state: running;
+            animation-play-state: running; }
+  63% {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+  65% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; } }
+
+@keyframes header_detail_mobile {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+  35% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+  37% {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+  38% {
+    -webkit-animation-play-state: running;
+            animation-play-state: running; }
+  39% {
+    opacity: 1; }
+  40% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; }
+  60% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0; }
+  61% {
+    opacity: 1; }
+  62% {
+    -webkit-animation-play-state: running;
+            animation-play-state: running; }
+  63% {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+  65% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     opacity: 1;
@@ -1057,12 +1145,10 @@ a {
   opacity: 0;
   -webkit-transition: all 300ms ease-out;
   transition: all 300ms ease-out; }
-
-.mfp-bg.mfp-ready {
-  opacity: 0.8; }
-
-.mfp-bg.mfp-removing {
-  opacity: 0; }
+  .mfp-bg.mfp-ready {
+    opacity: 0.8; }
+  .mfp-bg.mfp-removing {
+    opacity: 0; }
 
 .mfp-wrap .mfp-content {
   opacity: 0;
@@ -1078,18 +1164,25 @@ a {
 .mfp-close {
   opacity: 1;
   border-radius: 50%;
-  border: solid 3px #fff;
+  width: 44px;
+  height: 44px;
   top: 20px;
   right: 20px; }
-  @media screen and (min-width: 750px) {
-    .mfp-close {
-      top: 30px;
-      right: 30px; } }
-  .mfp-close:hover {
+  .mfp-close:active {
     top: 20px;
     right: 20px; }
-    @media screen and (min-width: 750px) {
-      .mfp-close:hover {
+  @media screen and (max-width: 749px) {
+    .mfp-close {
+      border: solid 3px #fff !important; } }
+  @media screen and (min-width: 750px) {
+    .mfp-close {
+      border: solid 5px #fff !important;
+      width: 70px;
+      height: 70px;
+      font-size: 50px;
+      top: 30px;
+      right: 30px; }
+      .mfp-close:active {
         top: 30px;
         right: 30px; } }
 
@@ -1174,6 +1267,9 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
+    @media screen and (max-width: 749px) {
+      .openingAnimation .openingAnimation_logo {
+        bottom: 55vh; } }
   .openingAnimation .openingAnimation_icon {
     margin-right: 20px;
     -webkit-animation: big-scale 0.7s ease-in-out forwards;
@@ -1596,7 +1692,7 @@ a {
           transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); } }
       @media screen and (max-width: 749px) {
         .top .hero .hero_news {
-          padding: 5px 0 10px;
+          padding-top: 5px;
           position: relative;
           top: -20px; } }
       @media screen and (min-width: 750px) and (max-width: 992px) {
@@ -1909,7 +2005,9 @@ a {
       background-color: #fff;
       width: 54px;
       height: 54px;
-      cursor: pointer; }
+      cursor: pointer;
+      -webkit-transition: opacity 0.8s;
+      transition: opacity 0.8s; }
       @media screen and (min-width: 750px) {
         .top .video .slick-arrow {
           width: 70px;

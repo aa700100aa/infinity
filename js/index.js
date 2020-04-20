@@ -97,7 +97,7 @@ $(function () {
   if (window.matchMedia('(max-width:749px)').matches) {
     setTimeout(function () {
       $(".js-headerDetail li").addClass("add-headerDetail");
-    }, 3500);
+    }, 3550);
   } else {
     setTimeout(function () {
       $(".js-headerDetail li").addClass("add-headerDetail");
@@ -117,6 +117,17 @@ $(function () {
   /*---------------------------------------------
     header 文字切り替え
   -----------------------------------------------*/
+  if (window.matchMedia('(max-width:749px)').matches) {
+    setTimeout(function () {
+      $(".hero h1 img").css("transform", "translateX(0)");
+      $(".hero h1 img").css("transform", "scale(1)");
+    }, 1000);
+  } else {
+    setTimeout(function () {
+      $(".hero h1 img").css("transform", "translateX(0)");
+      $(".hero h1 img").css("transform", "scale(1)");
+    }, 2000);
+  }
   setInterval(function() {
     if ($(".js-headerInfomation").hasClass('add-firstText')) {
       $(".js-headerDetail li").html("<p>関ジャニ&infin;アプリで、関ジャニ&infin;を持ち歩こう！</p>");

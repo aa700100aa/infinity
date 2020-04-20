@@ -63,7 +63,7 @@ header {
       overflow: hidden;
       animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 3750ms;
       @include mediaQuery(mobileOnly) {
-        animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 3250ms;
+        animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 3450ms;
       }
       @include mediaQuery(tablet) {
         left: calc(2.4vw + 66px);
@@ -149,11 +149,8 @@ header {
           height: 72px;
         }
         &.add-headerDetail {
-          animation: header_detail 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite forwards;
-          @include mediaQuery(mobileOnly) {
-            animation: header_detail 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) -750ms infinite forwards;
-          }
-          @keyframes header_detail {
+          animation: header_detail_desktop 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite forwards;
+          @keyframes header_detail_desktop {
             0% {
               transform: translateY(0);
               opacity: 1;
@@ -191,6 +188,52 @@ header {
               animation-play-state: paused;
             }
             60% {
+              transform: translateY(0);
+              opacity: 1;
+              animation-play-state: paused;
+            }
+          }
+          @include mediaQuery(mobileOnly) {
+            animation: header_detail_mobile 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) -600ms infinite forwards;
+          }
+          @keyframes header_detail_mobile {
+            0% {
+              transform: translateY(0);
+              opacity: 1;
+              animation-play-state: paused;
+            }
+            35% {
+              transform: translateY(0);
+              opacity: 1;
+              animation-play-state: paused;
+            }
+            37% {
+              animation-play-state: paused;
+            }
+            38% {
+              animation-play-state: running;
+            }
+            39% {
+              opacity: 1;
+            }
+            40% {
+              transform: translateY(-100%);
+              opacity: 0;
+            }
+            60% {
+              transform: translateY(100%);
+              opacity: 0;
+            }
+            61% {
+              opacity: 1;
+            }
+            62% {
+              animation-play-state: running;
+            }
+            63% {
+              animation-play-state: paused;
+            }
+            65% {
               transform: translateY(0);
               opacity: 1;
               animation-play-state: paused;

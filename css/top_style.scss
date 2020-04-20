@@ -48,37 +48,47 @@ a {
 .mfp-bg {
   opacity: 0;
   transition: all 300ms ease-out;
+  &.mfp-ready {
+    opacity: 0.8;
+  }
+  &.mfp-removing {
+    opacity: 0;
+  }
 }
-.mfp-bg.mfp-ready {
-  opacity: 0.8;
-}
-.mfp-bg.mfp-removing {
-  opacity: 0;
-}
-.mfp-wrap .mfp-content {
-  opacity: 0;
-  transition: all 300ms ease-out;
-}
-.mfp-wrap.mfp-ready .mfp-content {
-  opacity: 1;
-}
-.mfp-wrap.mfp-removing .mfp-content {
-  opacity: 0;
+.mfp-wrap {
+  .mfp-content {
+    opacity: 0;
+    transition: all 300ms ease-out;
+  }
+  &.mfp-ready .mfp-content {
+    opacity: 1;
+  }
+  &.mfp-removing .mfp-content {
+    opacity: 0;
+  }
 }
 .mfp-close  {
   opacity: 1;
   border-radius: 50%;
-  border: solid 3px #fff;
+  width: 44px;
+  height: 44px;
   top: 20px;
   right: 20px;
-  @include mediaQuery(desktopFollow) {
-    top: 30px;
-    right: 30px;
-  }
-  &:hover {
+  &:active {
     top: 20px;
     right: 20px;
-    @include mediaQuery(desktopFollow) {
+  }
+  @include mediaQuery(mobileOnly) {
+    border: solid 3px #fff !important;
+  }
+  @include mediaQuery(desktopFollow) {
+    border: solid 5px #fff !important;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    top: 30px;
+    right: 30px;
+    &:active {
       top: 30px;
       right: 30px;
     }
@@ -152,6 +162,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    @include mediaQuery(mobileOnly) {
+      bottom: 55vh;
+    }
   }
   .openingAnimation_icon {
     margin-right: 20px;
@@ -506,7 +519,7 @@ a {
         transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
       }
       @include mediaQuery(mobileOnly) {
-        padding: 5px 0 10px;
+        padding-top: 5px;
         position: relative;
         top: -20px;
       }
@@ -822,6 +835,7 @@ a {
       width: 54px;
       height: 54px;
       cursor: pointer;
+      transition: opacity 0.8s;
       @include mediaQuery(desktopFollow) {
         width: 70px;
         height: 70px;
