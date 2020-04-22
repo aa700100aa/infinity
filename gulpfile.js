@@ -5,9 +5,13 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require("browser-sync");
+// webpackの設定ファイルの読み込み
+const webpackStream = require('webpack-stream');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config');
 
 // style.scssをタスクを作成する
-gulp.task("css", function () {
+gulp.task("sass", function () {
   return gulp.src('./css/style.scss')// コンパイル対象のSassファイル
     .pipe(sass())
     .pipe(autoprefixer(
@@ -17,9 +21,23 @@ gulp.task("css", function () {
     ))
     .pipe(gulp.dest('./css'))
 });
+gulp.task('css', function (done) {
+  gulp.watch("./css/*.scss", gulp.series('sass'));
+  done();
+});
+
+// js
+gulp.task('bundle', function () {
+  return webpackStream(webpackConfig, webpack)
+    .pipe(gulp.dest('dest/js'))
+});
+gulp.task('js', function (done) {
+  gulp.watch("./src/*.js", gulp.series('bundle'));
+  done();
+});
 
 //ブラウザシンク
-gulp.task("browserSyncTask", function(done) {
+gulp.task("browserSync", function(done) {
   browserSync({
     server: {
       baseDir: "./" // ルートとなるディレクトリを指定
@@ -32,7 +50,4 @@ gulp.task("browserSyncTask", function(done) {
   done()
 });
 
-gulp.task("default", function () {
-  // scssフォルダを監視し、変更があったらコンパイルする
-  gulp.watch('./css/style.scss', gulp.series('css',gulp.parallel('browserSyncTask')));
-});
+gulp.task('default', gulp.series(gulp.parallel('js', 'css', 'browserSync')));
