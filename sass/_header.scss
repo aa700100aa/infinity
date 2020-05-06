@@ -248,7 +248,7 @@ header {
     top: 50%;
     transform: translateY(-50%);
     vertical-align: middle;
-    font-weight: 700;
+    font-weight: bold;
     line-height: 1.2;
     font-size: 11px;
     letter-spacing: -.5px;
@@ -272,14 +272,6 @@ header {
   }
   @include mediaQuery(desktop) {
     width: 216px;
-  }
-  svg {
-    width: 180px;
-    height: auto;
-    @include mediaQuery(desktop) {
-      width: 216px;
-      height: 70.69;
-    }
   }
 }
 .header_nav {

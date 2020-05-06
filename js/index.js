@@ -74,6 +74,11 @@ $(function () {
 document.addEventListener('DOMContentLoaded', () => {
 
   /*---------------------------------------------
+    キーボードショートカット　コピー禁止
+  -----------------------------------------------*/
+  document.body.oncopy = () => { return false;}
+
+  /*---------------------------------------------
     header 文字&ボーダー 表示非表示 切り替え
   -----------------------------------------------*/
   const headerText = document.querySelectorAll('.js-headerText');
@@ -102,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //オープニングアニメーションにかかる時間(cssで定義した値と同値) 
   const opAnimationTime = 2500;
   const opAnimationTrigger = document.querySelectorAll('.js-trigger');
-  window.addEventListener("load", () => {
+  window.addEventListener('load', () => {
     //アニメーション開始
     for (let i = 0; i < opAnimationTrigger.length; i++) {
       opAnimationTrigger[i].classList.add('add-trigger');
@@ -132,28 +137,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const video = document.querySelectorAll('.js-videoPopup video');
   const popupOverlay = document.querySelectorAll('.js-videoPopupOverlay');
   for (let k = 0; k < popupTrigger.length; k++) {
-    // ポップアップ
+    // ポップアップ 開始
     popupTrigger[k].addEventListener('click', () => {
       videoPopup[k].classList.add('add-popup');
       setTimeout(function(){
         popupOverlay[k].classList.add('add-popup');
         video[k].classList.add('add-popup');
       }, 10);
-      // PCでマウスホイールでのスクロール操作の制御
-      $(window).on('wheel',function(e){
-        e.preventDefault();
-      });
       // モバイル端末でのタッチスクロール操作の制御
-      $(window).on('touchmove.noScroll', function(e) {
-        e.preventDefault();
-      });
-      // ios端末でのタッチスクロール操作の制御
-      $('body').css('touch-action', 'none');
-      // 全てのスクロール操作の制御（ウィンドウ表示域で固定）
-      $('body').css('overflow', 'hidden');
+      document.addEventListener('touchmove', noScroll, { passive: false });
+      // PCでマウスホイールでのスクロール操作の制御
+      document.addEventListener('mousewheel', noScroll, { passive: false });
+      // ios端末でのタッチスクロール操作の制御 & 全てのスクロール操作の制御（ウィンドウ表示域で固定）
+      document.querySelector('body').classList.add('add-ScrollProhibited');
     });
 
-    // ポップアップ クローズ
+    // ポップアップ 終了
     popupOverlay[k].addEventListener('click', () => {
       popupClose();
     });
@@ -162,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   }
-
+  // ポップアップ 終了 関数
   popupClose = () => {
     for (let l = 0; l < popupTrigger.length; l++) {
       popupOverlay[l].classList.remove('add-popup');
@@ -173,11 +172,15 @@ document.addEventListener('DOMContentLoaded', () => {
       video[l].pause();
     }
     //スクロール操作禁止解除
-    $(window).off('wheel');
-    $(document).off('.noScroll');
-    $('body').css('overflow', 'auto');
-    $('body').css('touch-action', 'auto');
+    document.removeEventListener('touchmove', noScroll, { passive: false });
+    document.removeEventListener('mousewheel', noScroll, { passive: false });
+    document.querySelector('body').classList.remove('add-ScrollProhibited');
   }
+
+  // スクロール 禁止関数
+  noScroll = () => {
+    event.preventDefault();
+　}
 
   /*---------------------------------------------
     スクロールエフェクト

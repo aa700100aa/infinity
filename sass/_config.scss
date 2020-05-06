@@ -2,17 +2,29 @@
   追加 リセットスタイル
 -------------------*/
 body {
-position: relative;
-color: #000;
-font-family: 'Noto Sans JP', 'Noto Sans CJK JP', 'Noto Sans Japanese', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
-margin-top: 93px;
+  position: relative;
+  color: #000;
+  font-family: 'Noto Sans JP', 'Noto Sans CJK JP', 'Noto Sans Japanese', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+  margin-top: 92px;
+  //テキストの選択（ドラッグ）禁止
+  user-select:none;
   @include mediaQuery(desktopFollow) {
     margin-top: 130px;
+  }
+  &.add-ScrollProhibited {
+    // ios端末でのタッチスクロール操作の制御
+    touch-action: none;
+    // 全てのスクロール操作の制御（ウィンドウ表示域で固定）
+    overflow: hidden;
   }
 }
 img {
   width: 100%;
   vertical-align: bottom;
+  @include mediaQuery(mobile) {
+    // スマホ長押しダウンロード禁止
+    pointer-events: none;
+  }
 }
 
 video {
@@ -28,6 +40,8 @@ ul {
 a {
   text-decoration: none;
   color: #000;
+  //ios Android ハイライトカラー無効化
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 /*------------------
