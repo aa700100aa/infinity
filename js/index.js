@@ -1,192 +1,202 @@
-$(document).ready(function(){
-  /*---------------------------------------------
-    動画コンテンツ
-  -----------------------------------------------*/
-  //スライダー
-  $('.js-videoSlider').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      initialSlide: 0,
-      speed: 275,
-      arrows: true,
-      prevArrow: "<div class='prevArrow'><img src='images/arrow_bk.svg' alt=''></div>",
-      nextArrow: "<div class='nextArrow'><img src='images/arrow_bk.svg' alt=''></div>",
-      infinite: false,
-  });
-  //ポップアップ
-  $('.js-popUp').each(function () {
-    $(this).magnificPopup({
-      mainClass: 'mod-popupMovie',
-      items:{
-        src: $(this).find('.js-video'),
-        type: 'inline'
-      },
-      closeBtnInside: false,
-      removalDelay: 1000,
-      callbacks: {
-        // ポップアップ時の処理
-        open: function () {
-          // PCでマウスホイールでのスクロール操作の制御
-          $(window).on('wheel',function(e){
-            e.preventDefault();
-          });
-          // モバイル端末でのタッチスクロール操作の制御
-          $(window).on('touchmove.noScroll', function(e) {
-            e.preventDefault();
-          });
-          // ios端末でのタッチスクロール操作の制御
-          $("body").css('touch-action', 'none');
-          // 全てのスクロール操作の制御（ウィンドウ表示域で固定）
-          $("body").css('overflow', 'hidden');
-          //フェードイン
-          setTimeout(function(){
-            $(".js-video").addClass("add-fadeIn");
-          }, 100);
-        },
-        // ポップアップクローズ時の処理
-        close: function () {
-          var video = document.querySelectorAll('.js-video');
-          for (let i = 0; i < video.length; i++) {
-            video[i].pause();
-          }
-          $(".js-video").removeClass("add-fadeIn");
-          //スクロール操作禁止解除
-          $(window).off('wheel');
-          $(document).off('.noScroll');
-          $("body").css('overflow', 'auto');
-          $("body").css('touch-action', 'auto');
-        }
-      }
-    });
-  });
-});
 /*---------------------------------------------
-  ナビのテキスト変更
+  jQuery
 -----------------------------------------------*/
-function navTextChange() {
-  if (window.matchMedia('(min-width:750px)').matches) {
-    $("nav ul li:nth-child(5) a").html("LIVE/STAGE");
-  } else {
-    $("nav ul li:nth-child(5) a").html("LIVE");
-  }
-}
-/*---------------------------------------------
-  ヘッダーの高さ調整
------------------------------------------------*/
-function headerAjust() {
-  $("body").css("margin-top", $("header").height());
-}
-
 $(function () {
+
   /*---------------------------------------------
-    オープニング処理
+    contentsLink スライダー
   -----------------------------------------------*/
-  setTimeout(function () {
-    $(".js-openingAnimation").css("display", "none");
-  }, 1200);
-  setTimeout(function () {
-    $(".js-heroOverlayGrids").css("display", "none");
-  }, 2700);
-  setTimeout(function () {
-    $(".js-heroNav li a").css("transform", "translateY(0)");
-  }, 2000);
-  setTimeout(function () {
-    $(".js-heroNews").css("transform", "translateX(0)");
-  }, 2000);
-  //headerテキスト切り替え開始タイミング
-  if (window.matchMedia('(max-width:749px)').matches) {
-    setTimeout(function () {
-      $(".js-headerDetail li").addClass("add-headerDetail");
-    }, 3550);
-  } else {
-    setTimeout(function () {
-      $(".js-headerDetail li").addClass("add-headerDetail");
-    }, 3500);
-  }
-  if (window.matchMedia('(max-width:749px)').matches) {
-    setTimeout(function () {
-      $(".hero h1 img").css("transform", "translateX(0)");
-      $(".hero h1 img").css("transform", "scale(1)");
-    }, 1000);
-  } else {
-    setTimeout(function () {
-      $(".hero h1 img").css("transform", "translateX(0)");
-      $(".hero h1 img").css("transform", "scale(1)");
-    }, 2000);
-  }
-  /*---------------------------------------------
-    header 文字切り替え
-  -----------------------------------------------*/
-  if (window.matchMedia('(max-width:749px)').matches) {
-    setTimeout(function () {
-      $(".hero h1 img").css("transform", "translateX(0)");
-      $(".hero h1 img").css("transform", "scale(1)");
-    }, 1000);
-  } else {
-    setTimeout(function () {
-      $(".hero h1 img").css("transform", "translateX(0)");
-      $(".hero h1 img").css("transform", "scale(1)");
-    }, 2000);
-  }
-  setInterval(function() {
-    if ($(".js-headerInfomation").hasClass('add-firstText')) {
-      $(".js-headerDetail li").html("<p>関ジャニ&infin;アプリで、関ジャニ&infin;を持ち歩こう！</p>");
-      $(".js-headerInfomation").addClass("add-secondText");
-      $(".js-headerInfomation").removeClass("add-firstText");
-      $(".js-headerDetail").parent().find(".js-headerBorder").css("opacity", "1");
-    } else if ($(".js-headerInfomation").hasClass('add-secondText')) {
-      $(".js-headerDetail li").html("<p>ニューシングル「友よ」発売中！</p>");
-      $(".js-headerInfomation").addClass("add-thirdText");
-      $(".js-headerInfomation").removeClass("add-secondText");
-      $(".js-headerDetail").parent().find(".js-headerBorder").css("opacity", "1");
+  // ブレイクポイント定義
+  var tabletWidth = window.matchMedia( '(min-width:750px) and (max-width:993px)' );
+  var mobileWidth = window.matchMedia('screen and (max-width: 749px)');
+
+  function checkBreakPoint() {
+    if (tabletWidth.matches) {
+      //タブレット
+      $('.js-contentsLinkSlider').slick({
+        slidesToScroll: 1,
+        initialSlide: 0,
+        speed: 150,
+        arrows: false,
+        infinite: false,
+        slidesToShow: document.body.clientWidth / 310
+      });
+      $('.js-contentsLinkSlider').on('setPosition', function () {
+        //インラインスタイル オーバーライド
+        $('.js-contentsLinkEmpty').css('width', '11.3%');
+      });
+    } else if (mobileWidth.matches) {
+      //モバイル
+      $('.js-contentsLinkSlider').slick({
+        slidesToScroll: 1,
+        initialSlide: 0,
+        speed: 275,
+        arrows: false,
+        infinite: false,
+        slidesToShow: document.body.clientWidth / 210
+      });
+      $('.js-contentsLinkSlider').on('setPosition', function () {
+        //インラインスタイル オーバーライド
+        $('.js-contentsLinkEmpty').css('width', '50px');
+      });
     } else {
-      $(".js-headerDetail li").html("<img src='images/header_logo_200419.svg' alt='関ジャニ&infin; (エイト)'>");
-      $(".js-headerInfomation").addClass("add-firstText");
-      $(".js-headerInfomation").removeClass("add-thirdText");
-      $(".js-headerDetail").parent().find(".js-headerBorder").css("opacity", "0");
+      //デスクトップ
+      $('.js-contentsLinkSlider.slick-initialized').slick('unslick');
     }
-  }, 7000);
-  navTextChange();
-  headerAjust();
+  }
+
+  // ブレイクポイントの瞬間に発火
+  tabletWidth.addListener(checkBreakPoint);
+  mobileWidth.addListener(checkBreakPoint);
+
+  // 初回チェック
+  checkBreakPoint();
+
+  /*---------------------------------------------
+    動画 スライダー
+  -----------------------------------------------*/
+  $('.js-videoSlider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    speed: 150,
+    arrows: true,
+    prevArrow: "<div class='prevArrow'><img src='images/arrow_bk.svg' alt=''></div>",
+    nextArrow: "<div class='nextArrow'><img src='images/arrow_bk.svg' alt=''></div>",
+    infinite: false
+  });
+
 });
 
-$(window).resize(function(){
-  navTextChange();
-  headerAjust();
-});
-
-$(window).scroll(function (){
-  $(".js-slideIn").each(function(){
-     var imgPos = $(this).offset().top;
-     var scroll = $(window).scrollTop();
-     var windowHeight = $(window).height();
-     if (scroll > imgPos - windowHeight){
-      $(this).addClass("add-slideIn");
-     }
-  });
-  $(".js-fadeIn").each(function(){
-    var imgPos = $(this).offset().top;
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll > imgPos - windowHeight){
-     $(this).addClass("add-fadeIn");
-    }
-  });
-  $(".profile").each(function(){
-    var imgPos = $(this).offset().top;
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll > imgPos - windowHeight){
-     $(this).addClass("add-opacity");
-    }
-  });
-});
 /*---------------------------------------------
-  読み込み時にページの一番上を指定
+  JavaScript（Vanilla JS）
 -----------------------------------------------*/
-$(document).ready(function(){
-  $('html,body').animate({ scrollTop: 0 }, '1');
-});
-$(function() {
-  $('html,body').animate({ scrollTop: 0 }, '1');
+document.addEventListener('DOMContentLoaded', () => {
+
+  /*---------------------------------------------
+    header 文字&ボーダー 表示非表示 切り替え
+  -----------------------------------------------*/
+  const headerText = document.querySelectorAll('.js-headerText');
+  const headerborder = document.querySelectorAll('.js-headerBorder');
+  let count = 0;
+  //ヘッダーの文字切り替えインターバル(cssで定義した値と同値) 
+  const headerActionTime = 7000;
+  setInterval(() => {
+    //文字 切り替え
+    headerText[count].classList.remove('add-active');
+    count = count === headerText.length - 1 ? 0 : count += 1;//最後の要素を表示したらリセット
+    headerText[count].classList.add('add-active');
+    //ボーダー 表示非表示 切り替え
+    if (count === 0) {
+      headerborder[0].classList.remove('add-display');
+      headerborder[1].classList.remove('add-display');
+    } else {
+      headerborder[0].classList.add('add-display');
+      headerborder[1].classList.add('add-display');
+    }
+  }, headerActionTime);
+  
+  /*---------------------------------------------
+    オープニングアニメーション
+  -----------------------------------------------*/
+  //オープニングアニメーションにかかる時間(cssで定義した値と同値) 
+  const opAnimationTime = 2500;
+  const opAnimationTrigger = document.querySelectorAll('.js-trigger');
+  window.addEventListener("load", () => {
+    //アニメーション開始
+    for (let i = 0; i < opAnimationTrigger.length; i++) {
+      opAnimationTrigger[i].classList.add('add-trigger');
+    }
+
+    //アニメーション終了
+    setTimeout(() => {
+      document.querySelector('.js-opAnimation').classList.add('add-displayNone');
+      //アニメーション終了時、常にページの一番を指定
+      scrollTo(0, 0);
+      //ページ再読み込み時にもスクロールエフェクトを発生させるためクラスを外す
+      for (let j = 0; j < effectElement.length; j++) {
+        effectElement[j].classList.remove('add-inView');
+      }
+    }, opAnimationTime * 0.48);
+    setTimeout(() => {
+      document.querySelector('.js-heroOverlayPoster').classList.add('add-displayNone');
+      document.querySelector('.js-heroOverlayGrids').classList.add('add-displayNone');
+    }, opAnimationTime);
+  });
+
+  /*---------------------------------------------
+    動画 ポップアップ
+  -----------------------------------------------*/
+  const popupTrigger = document.querySelectorAll('.js-popupTrigger');
+  const videoPopup = document.querySelectorAll('.js-videoPopup');
+  const video = document.querySelectorAll('.js-videoPopup video');
+  const popupOverlay = document.querySelectorAll('.js-videoPopupOverlay');
+  for (let k = 0; k < popupTrigger.length; k++) {
+    // ポップアップ
+    popupTrigger[k].addEventListener('click', () => {
+      videoPopup[k].classList.add('add-popup');
+      setTimeout(function(){
+        popupOverlay[k].classList.add('add-popup');
+        video[k].classList.add('add-popup');
+      }, 10);
+      // PCでマウスホイールでのスクロール操作の制御
+      $(window).on('wheel',function(e){
+        e.preventDefault();
+      });
+      // モバイル端末でのタッチスクロール操作の制御
+      $(window).on('touchmove.noScroll', function(e) {
+        e.preventDefault();
+      });
+      // ios端末でのタッチスクロール操作の制御
+      $('body').css('touch-action', 'none');
+      // 全てのスクロール操作の制御（ウィンドウ表示域で固定）
+      $('body').css('overflow', 'hidden');
+    });
+
+    // ポップアップ クローズ
+    popupOverlay[k].addEventListener('click', () => {
+      popupClose();
+    });
+    document.querySelectorAll('.js-videoClose')[k].addEventListener('click', () => {
+      popupClose();
+    });
+
+  }
+
+  popupClose = () => {
+    for (let l = 0; l < popupTrigger.length; l++) {
+      popupOverlay[l].classList.remove('add-popup');
+      video[l].classList.remove('add-popup');
+      setTimeout(function () {
+        videoPopup[l].classList.remove('add-popup');
+      }, 300);
+      video[l].pause();
+    }
+    //スクロール操作禁止解除
+    $(window).off('wheel');
+    $(document).off('.noScroll');
+    $('body').css('overflow', 'auto');
+    $('body').css('touch-action', 'auto');
+  }
+
+  /*---------------------------------------------
+    スクロールエフェクト
+  -----------------------------------------------*/
+  const effectElement = document.querySelectorAll('.js-inView');
+  let scrollPosition; //現在のスクロール量
+  let windowHeight; //ブラウザ内の表示領域の高さ
+  let scrollInView; //スクロールエフェクトのキーとなる値
+  window.addEventListener('scroll', () => {
+    scrollPosition = window.pageYOffset;
+    windowHeight = document.documentElement.clientHeight;
+    for (let m = 0; m < effectElement.length; m++) {
+      //ビューポートから各要素のtopまでの値　- ブラウザの表示領域 + スクロール量
+      scrollInView = effectElement[m].getBoundingClientRect().top - windowHeight + scrollPosition;
+      //各要素が表示領域に入った時クラスを付与
+      if (scrollPosition > scrollInView) {
+        effectElement[m].classList.add('add-inView');
+      }
+    }
+  });
+
 });

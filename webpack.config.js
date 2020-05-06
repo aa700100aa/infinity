@@ -9,10 +9,10 @@ module.exports = {
   mode: "development",
 
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: "./src/main.js",
+  entry: "./js/index.js",
   // 出力ファイル
   output: {
-    filename: "bundle.js"
+    filename: "./bundle.js"
   },
 
   module: {

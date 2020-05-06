@@ -12,27 +12,27 @@ const webpackConfig = require('./webpack.config');
 
 // style.scssをタスクを作成する
 gulp.task("sass", function () {
-  return gulp.src('./css/style.scss')// コンパイル対象のSassファイル
+  return gulp.src('./sass/index.scss')// コンパイル対象のSassファイル
     .pipe(sass())
     .pipe(autoprefixer(
       {
         grid: true
       }
     ))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('dist/css'))
 });
 gulp.task('css', function (done) {
-  gulp.watch("./css/*.scss", gulp.series('sass'));
+  gulp.watch("./sass/*.scss", gulp.series('sass'));
   done();
 });
 
 // js
 gulp.task('bundle', function () {
   return webpackStream(webpackConfig, webpack)
-    .pipe(gulp.dest('dest/js'))
+    .pipe(gulp.dest('dist/js'))
 });
 gulp.task('js', function (done) {
-  gulp.watch("./src/*.js", gulp.series('bundle'));
+  gulp.watch("./js/*.js", gulp.series('bundle'));
   done();
 });
 

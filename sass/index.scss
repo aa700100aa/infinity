@@ -1,9 +1,9 @@
 @import "./reset";
-@import "./slick";
-@import "./magnific-popup";
+@import "../lib/css/slick";
 
 @import "./responsive";
+@import "./config";
 
 @import "./header";
 @import "./footer";
-@import "./top_style";
+@import "./top";

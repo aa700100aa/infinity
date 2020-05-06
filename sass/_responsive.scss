@@ -29,31 +29,31 @@
  * デバイス毎に表示をコントロールするクラス
  */
 
-.mod-disyplayNone_mobile {
+.mod-sp {
   @include mediaQuery($breakpoint: mobile) {
     display: none !important;
   }
 }
 
-.mod-disyplayNone_mobile_only {
+.mod-sp_only {
   @include mediaQuery($breakpoint: mobileOnly) {
     display: none !important;
   }
 }
 
-.mod-disyplayNone_tablet {
+.mod-tab {
   @include mediaQuery($breakpoint: tablet) {
     display: none !important;
   }
 }
 
-.mod-disyplayNone_desktopFollow {
+.mod-pc_follow {
   @include mediaQuery($breakpoint: desktopFollow) {
     display: none !important;
   }
 }
 
-.mod-disyplayNone_desktop {
+.mod-pc {
   @include mediaQuery() {
     display: none !important;
   }
