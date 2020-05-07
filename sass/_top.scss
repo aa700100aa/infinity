@@ -182,19 +182,21 @@
     left: 0;
     background-color: #1C1C1C;
     z-index: 15;
-    animation: poster $opAnimationTime * 0.2 $bezierValue $opAnimationTime * 0.6 forwards;
     transform-origin: left;
     &.add-displayNone {
       display: none;
     }
-    @keyframes poster {
-      0% {
-        transform: translate3d(100%, 0, 0);
-        transform: scaleX(1);
-      }
-      100% {
-        transform: translate3d(0, 0, 0);
-        transform: scaleX(0);
+    &.add-trigger {
+      animation: poster $opAnimationTime * 0.2 $bezierValue $opAnimationTime * 0.5 forwards;
+      @keyframes poster {
+        0% {
+          transform: translate3d(100%, 0, 0);
+          transform: scaleX(1);
+        }
+        100% {
+          transform: translate3d(0, 0, 0);
+          transform: scaleX(0);
+        }
       }
     }
   }
@@ -219,36 +221,38 @@
     background-color: #1c1c1c;
     z-index: 2;
     height: 22vw;
+    transform-origin: right;
     @include mediaQuery(desktopFollow) {
       height: 34.48%;
     }
-    animation: hero_overlay_grid $opAnimationTime * 0.2 $bezierValue $opAnimationTime * 0.8 forwards;
-    transform-origin: right;
-    @keyframes hero_overlay_grid {
-      0% {
-        transform: translate3d(0, 0, 0);
-        transform: scaleX(1);
+    &.add-trigger {
+      animation: hero_overlay_grid $opAnimationTime * 0.2 $bezierValue $opAnimationTime * 0.7 forwards;
+      @keyframes hero_overlay_grid {
+        0% {
+          transform: translate3d(0, 0, 0);
+          transform: scaleX(1);
+        }
+        100% {
+          transform: translate3d(100%, 0, 0);
+          transform: scaleX(0);
+        }
       }
-      100% {
-        transform: translate3d(100%, 0, 0);
-        transform: scaleX(0);
+      &:nth-child(2) {
+        top: 22vw;
+        @include mediaQuery(desktopFollow) {
+          top: 33.33%;
+        }
+        animation-delay: $opAnimationTime * 0.74;
       }
-    }
-    &:nth-child(2) {
-      top: 22vw;
-      @include mediaQuery(desktopFollow) {
-        top: 33.33%;
+      
+      &:nth-child(3) {
+        top: 44vw;
+        @include mediaQuery(desktopFollow) {
+          top: auto;
+          bottom: 0;
+        }
+        animation-delay: $opAnimationTime * 0.78;
       }
-      animation-delay: $opAnimationTime * 0.84;
-    }
-    
-    &:nth-child(3) {
-      top: 44vw;
-      @include mediaQuery(desktopFollow) {
-        top: auto;
-        bottom: 0;
-      }
-      animation-delay: $opAnimationTime * 0.88;
     }
   }
   .hero_title {
@@ -910,7 +914,10 @@
     z-index: 25;
     transition: all 500ms ease-out;
     display: none;
-    overflow: hidden;
+    //Edge
+    @supports (-ms-ime-align: auto) {
+      -ms-overflow-style: none;
+    }
     &.add-popup {
       display: block;
     }
