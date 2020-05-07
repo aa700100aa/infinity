@@ -14,8 +14,6 @@ body {
   &.add-ScrollProhibited {
     // ios端末でのタッチスクロール操作の制御
     touch-action: none;
-    // 全てのスクロール操作の制御（ウィンドウ表示域で固定）
-    overflow: hidden;
   }
 }
 img {

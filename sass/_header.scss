@@ -150,6 +150,10 @@ header {
   height: 36px;
   display: none;
   animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.5 forwards;
+  //Edge
+  @supports (-ms-ime-align: auto) {
+    animation-delay: 2750ms;
+  }
   @keyframes header_text {
     0% {
       transform: translateY(0);
@@ -196,7 +200,7 @@ header {
   @include mediaQuery(desktopFollow) {
     padding-left: 24px;
     height: 72px;
-    @keyframes header_detail {
+    @keyframes header_text {
       0% {
         transform: translateY(0);
         opacity: 1;

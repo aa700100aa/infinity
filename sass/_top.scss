@@ -296,12 +296,20 @@
       left: auto;
       right: 700px;
     }
+    //Edge
+    @supports (-ms-ime-align: auto) {
+      top: 1%;
+    }
+    //IE
+    @media all and (-ms-high-contrast: none) {
+      top: 1%;
+    }
   }
   .hero_link {
     display: block;
     font-family: $extra;
     letter-spacing: -2px;
-    line-height: .75;
+    line-height: 0.77;
     overflow: hidden;
     font-size: 4em;
     text-align: left;
@@ -822,13 +830,25 @@
     line-height: 19px;
     font-weight: normal;
     margin: 0 0 15px;
-    transition: all 600ms 400ms;
     color: #fff;
+    transition: all 600ms ease-in-out;
+    transform: translateX(-50%);
+    opacity: 0;
+    &.add-slideIn {
+      transform: translateX(0%);
+      opacity: 1;
+    }
   }
   .video_time {
     font-size: 13px;
-    transition: all 600ms 400ms;
     color: #A2A2A2;
+    transition: all 600ms ease-in-out 20ms;
+    transform: translateX(-50%);
+    opacity: 0;
+    &.add-slideIn {
+      transform: translateX(0%);
+      opacity: 1;
+    }
     @include mediaQuery(desktopFollow) {
       font-size: 14px;
     }
@@ -871,6 +891,17 @@
       }
     }
   }
+  .video_textHidden {
+    @include mediaQuery(mobileOnly) {
+      position: absolute;
+      bottom: 54px;
+      right: 0;
+      width: 40%;
+      height: 112px;
+      background-color: #1c1c1c;
+      z-index: 4;
+    }
+  }
   //ポップアップ video
   .video_popup {
     position: fixed;
@@ -879,6 +910,7 @@
     z-index: 25;
     transition: all 500ms ease-out;
     display: none;
+    overflow: hidden;
     &.add-popup {
       display: block;
     }
@@ -1139,12 +1171,15 @@
     &:before, &:after {
       content: "";
       position: absolute;
-      right: 30%;
+      right: 26%;
       bottom: 50%;
       transform: translateY(50%);
       width: 18px;
       height: 18px;
       background-size: cover;
+      @include mediaQuery(desktopFollow) {
+        right: 30%;
+      }
     }
     &:before {
       display: none;
@@ -1161,7 +1196,7 @@
     }
     .button_text {
       position: absolute;
-      right: 50%;
+      right: 34%;
       bottom: 50%;
       transform: translateY(50%);
       @include mediaQuery(desktopFollow) {

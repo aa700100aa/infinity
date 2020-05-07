@@ -61,10 +61,30 @@ $(function () {
     initialSlide: 0,
     speed: 150,
     arrows: true,
-    prevArrow: "<div class='prevArrow'><img src='images/arrow_bk.svg' alt=''></div>",
-    nextArrow: "<div class='nextArrow'><img src='images/arrow_bk.svg' alt=''></div>",
+    prevArrow: "<div class='prevArrow js-slickArrow'><img src='images/arrow_bk.svg' alt=''></div>",
+    nextArrow: "<div class='nextArrow js-slickArrow'><img src='images/arrow_bk.svg' alt=''></div>",
     infinite: false
   });
+  
+  function textSlideIn() {
+    $('.js-videoElement').each(function (index, element) {
+      if ($(element).attr("aria-hidden") == "false") {
+        $(element).find('.js-videoTitle').addClass('add-slideIn');
+        $(element).find('.js-vieoTime').addClass('add-slideIn');
+      } else {
+        setTimeout(function () {
+          $(element).find('.js-videoTitle').removeClass('add-slideIn');
+          $(element).find('.js-vieoTime').removeClass('add-slideIn');
+        }, 150);
+      }
+    })
+  }
+  $('.js-videoSlider').on('swipe', function () {
+    textSlideIn();
+  });
+  $('.js-slickArrow').click(function() {
+    textSlideIn();
+  })
 
 });
 

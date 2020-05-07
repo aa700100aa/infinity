@@ -210,8 +210,7 @@ body {
       margin-top: 130px; } }
   body.add-ScrollProhibited {
     -ms-touch-action: none;
-        touch-action: none;
-    overflow: hidden; }
+        touch-action: none; }
 
 img {
   width: 100%;
@@ -433,6 +432,10 @@ header {
   display: none;
   -webkit-animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3500ms forwards;
           animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3500ms forwards; }
+  @supports (-ms-ime-align: auto) {
+    .header_text {
+      -webkit-animation-delay: 2750ms;
+              animation-delay: 2750ms; } }
 
 @-webkit-keyframes header_text {
   0% {
@@ -525,7 +528,7 @@ header {
     .header_text {
       padding-left: 24px;
       height: 72px; }
-    @-webkit-keyframes header_detail {
+    @-webkit-keyframes header_text {
       0% {
         -webkit-transform: translateY(0);
                 transform: translateY(0);
@@ -568,7 +571,7 @@ header {
         opacity: 1;
         -webkit-animation-play-state: paused;
                 animation-play-state: paused; } }
-    @keyframes header_detail {
+    @keyframes header_text {
       0% {
         -webkit-transform: translateY(0);
                 transform: translateY(0);
@@ -1184,11 +1187,17 @@ footer {
       .top .hero_nav {
         left: auto;
         right: 700px; } }
+    @supports (-ms-ime-align: auto) {
+      .top .hero_nav {
+        top: 1%; } }
+    @media all and (-ms-high-contrast: none) {
+      .top .hero_nav {
+        top: 1%; } }
   .top .hero_link {
     display: block;
     font-family: "BritishInseratMN", sans-serif;
     letter-spacing: -2px;
-    line-height: .75;
+    line-height: 0.77;
     overflow: hidden;
     font-size: 4em;
     text-align: left;
@@ -1703,14 +1712,28 @@ footer {
     line-height: 19px;
     font-weight: normal;
     margin: 0 0 15px;
-    -webkit-transition: all 600ms 400ms;
-    transition: all 600ms 400ms;
-    color: #fff; }
+    color: #fff;
+    -webkit-transition: all 600ms ease-in-out;
+    transition: all 600ms ease-in-out;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    opacity: 0; }
+    .top .video_title.add-slideIn {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      opacity: 1; }
   .top .video_time {
     font-size: 13px;
-    -webkit-transition: all 600ms 400ms;
-    transition: all 600ms 400ms;
-    color: #A2A2A2; }
+    color: #A2A2A2;
+    -webkit-transition: all 600ms ease-in-out 20ms;
+    transition: all 600ms ease-in-out 20ms;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    opacity: 0; }
+    .top .video_time.add-slideIn {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      opacity: 1; }
     @media screen and (min-width: 750px) {
       .top .video_time {
         font-size: 14px; } }
@@ -1750,6 +1773,15 @@ footer {
         .top .mod-videoButton:hover .button_arrow {
           right: 20%;
           opacity: 1; } }
+  @media screen and (max-width: 749px) {
+    .top .video_textHidden {
+      position: absolute;
+      bottom: 54px;
+      right: 0;
+      width: 40%;
+      height: 112px;
+      background-color: #1c1c1c;
+      z-index: 4; } }
   .top .video_popup {
     position: fixed;
     top: 0;
@@ -1757,7 +1789,8 @@ footer {
     z-index: 25;
     -webkit-transition: all 500ms ease-out;
     transition: all 500ms ease-out;
-    display: none; }
+    display: none;
+    overflow: hidden; }
     .top .video_popup.add-popup {
       display: block; }
     .top .video_popup video {
@@ -2007,13 +2040,16 @@ footer {
     .top .mod-releaseButton:before, .top .mod-releaseButton:after {
       content: "";
       position: absolute;
-      right: 30%;
+      right: 26%;
       bottom: 50%;
       -webkit-transform: translateY(50%);
               transform: translateY(50%);
       width: 18px;
       height: 18px;
       background-size: cover; }
+      @media screen and (min-width: 750px) {
+        .top .mod-releaseButton:before, .top .mod-releaseButton:after {
+          right: 30%; } }
     .top .mod-releaseButton:before {
       display: none;
       background-image: url("../../images/arrow_bk.svg"); }
@@ -2027,7 +2063,7 @@ footer {
         width: 276px; } }
     .top .mod-releaseButton .button_text {
       position: absolute;
-      right: 50%;
+      right: 34%;
       bottom: 50%;
       -webkit-transform: translateY(50%);
               transform: translateY(50%); }
