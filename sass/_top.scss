@@ -260,7 +260,7 @@
   }
   .hero_image {
     @include mediaQuery(mobileOnly) {
-      transition: transform $opAnimationTime * 0.2 $bezierValue $opAnimationTime * 0.6;
+      transition: transform $opAnimationTime * 0.2 $bezierValue $opAnimationTime * 0.8;
       transform: scale(1.2);
       &.mod-scale.add-trigger {
         transform: scale(1);
@@ -1109,8 +1109,10 @@
     margin: 0 auto 20px;
     transition: 500ms;
     cursor: pointer;
-    &:hover {
-      transform: translateY(-10px);
+    @include mediaQuery(desktop) {
+      &:hover {
+        transform: translateY(-10px);
+      }
     }
     @media (max-width: 1200px) and (min-width: 751px) {
       width: 40vw;
@@ -1161,18 +1163,20 @@
     max-width: 400px;
     position: relative;
     z-index: 2;
-    &:hover {
-      background-color: #fff;
-      box-shadow: 5px 25px 40px rgba(0,0,0,0.2);
-      transition: background-color 400ms;
-      &:before {
-        display: block;
-      }
-      &:after {
-        display: none;
-      }
-      .button_text {
-        color: #000;
+    @include mediaQuery(desktop) {
+      &:hover {
+        background-color: #fff;
+        box-shadow: 5px 25px 40px rgba(0,0,0,0.2);
+        transition: background-color 400ms;
+        &:before {
+          display: block;
+        }
+        &:after {
+          display: none;
+        }
+        .button_text {
+          color: #000;
+        }
       }
     }
     &:before, &:after {
@@ -1234,8 +1238,10 @@
       align-items: center;
       text-decoration: none;
       transition: transform 300ms;
-      &:hover {
-        transform: translateX(3%);
+      @include mediaQuery(desktop) {
+        &:hover {
+          transform: translateX(3%);
+        }
       }
     }
     .button_text {

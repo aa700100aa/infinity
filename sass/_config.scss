@@ -38,8 +38,8 @@ ul {
 a {
   text-decoration: none;
   color: #000;
-  //ios Android ハイライトカラー無効化
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  //クリック時の青色のアウトライン無効化
+  outline : none;
 }
 
 /*------------------

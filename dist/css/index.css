@@ -230,7 +230,7 @@ ul {
 a {
   text-decoration: none;
   color: #000;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  outline: none; }
 
 /*------------------
   フォントファイル読み込み
@@ -1143,10 +1143,10 @@ footer {
     overflow: hidden; }
   @media screen and (max-width: 749px) {
     .top .hero_image {
-      -webkit-transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1500ms;
-      transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1500ms;
-      transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1500ms;
-      transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1500ms, -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1500ms;
+      -webkit-transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
+      transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
+      transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
+      transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms, -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
       -webkit-transform: scale(1.2);
               transform: scale(1.2); }
       .top .hero_image.mod-scale.add-trigger {
@@ -1973,9 +1973,10 @@ footer {
     -webkit-transition: 500ms;
     transition: 500ms;
     cursor: pointer; }
-    .top .release_image:hover {
-      -webkit-transform: translateY(-10px);
-              transform: translateY(-10px); }
+    @media screen and (min-width: 993px) {
+      .top .release_image:hover {
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px); } }
     @media (max-width: 1200px) and (min-width: 751px) {
       .top .release_image {
         width: 40vw;
@@ -2029,18 +2030,19 @@ footer {
     max-width: 400px;
     position: relative;
     z-index: 2; }
-    .top .mod-releaseButton:hover {
-      background-color: #fff;
-      -webkit-box-shadow: 5px 25px 40px rgba(0, 0, 0, 0.2);
-              box-shadow: 5px 25px 40px rgba(0, 0, 0, 0.2);
-      -webkit-transition: background-color 400ms;
-      transition: background-color 400ms; }
-      .top .mod-releaseButton:hover:before {
-        display: block; }
-      .top .mod-releaseButton:hover:after {
-        display: none; }
-      .top .mod-releaseButton:hover .button_text {
-        color: #000; }
+    @media screen and (min-width: 993px) {
+      .top .mod-releaseButton:hover {
+        background-color: #fff;
+        -webkit-box-shadow: 5px 25px 40px rgba(0, 0, 0, 0.2);
+                box-shadow: 5px 25px 40px rgba(0, 0, 0, 0.2);
+        -webkit-transition: background-color 400ms;
+        transition: background-color 400ms; }
+        .top .mod-releaseButton:hover:before {
+          display: block; }
+        .top .mod-releaseButton:hover:after {
+          display: none; }
+        .top .mod-releaseButton:hover .button_text {
+          color: #000; } }
     .top .mod-releaseButton:before, .top .mod-releaseButton:after {
       content: "";
       position: absolute;
@@ -2106,9 +2108,10 @@ footer {
       transition: -webkit-transform 300ms;
       transition: transform 300ms;
       transition: transform 300ms, -webkit-transform 300ms; }
-      .top .release_textButton .button_anker:hover {
-        -webkit-transform: translateX(3%);
-                transform: translateX(3%); }
+      @media screen and (min-width: 993px) {
+        .top .release_textButton .button_anker:hover {
+          -webkit-transform: translateX(3%);
+                  transform: translateX(3%); } }
     .top .release_textButton .button_text {
       padding-right: 4px;
       line-height: 1.6;
