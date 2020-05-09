@@ -1,3 +1,6 @@
+window.$ = require('jquery');
+var slick = require('slick-carousel');
+
 /*---------------------------------------------
   jQuery
 -----------------------------------------------*/
@@ -63,12 +66,13 @@ $(function () {
     arrows: true,
     prevArrow: "<div class='prevArrow js-slickArrow'><img src='images/arrow_bk.svg' alt=''></div>",
     nextArrow: "<div class='nextArrow js-slickArrow'><img src='images/arrow_bk.svg' alt=''></div>",
-    infinite: false
+    infinite: false,
+    swipe: true
   });
   
   function textSlideIn() {
-    $('.js-videoElement').each(function (index, element) {
-      if ($(element).attr("aria-hidden") == "false") {
+    $('.slick-slide').each(function (index, element) {
+      if ($(element).hasClass('slick-active')) {
         $(element).find('.js-videoTitle').addClass('add-slideIn');
         $(element).find('.js-vieoTime').addClass('add-slideIn');
       } else {

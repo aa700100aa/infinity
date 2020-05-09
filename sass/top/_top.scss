@@ -423,7 +423,7 @@
       display: block;
       width: 20px;
       height: 20px;
-      background-image: url("../../images/arrow_bk.svg");
+      background-image: url("../../../images/arrow_bk.svg");
       background-size: cover;
       transform: rotate(90deg) translate3d(-18px, 0, 0);
       animation: hero_scrollArrow 2000ms infinite;
@@ -1194,10 +1194,10 @@
     }
     &:before {
       display: none;
-      background-image: url("../../images/arrow_bk.svg");
+      background-image: url("../../../images/arrow_bk.svg");
     }
     &:after {
-      background-image: url("../../images/arrow_wh.svg");
+      background-image: url("../../../images/arrow_wh.svg");
     }
     @include mediaQuery(mobileOnly) {
       margin: 0 auto;
@@ -1302,7 +1302,7 @@
         width: 40px;
         height: 40px;
         margin: auto;
-        background: url("../../images/profile_arrow.svg");
+        background: url("../../../images/profile_arrow.svg");
         background-size: cover;
       }
     }
@@ -1329,19 +1329,19 @@
       height: calc(100vh - 130px);
     }
     &:nth-child(1) {
-      background-image: url("../../images/profile_yokoyama_200419-min.jpg");
+      background-image: url("../../../images/profile_yokoyama_200419-min.jpg");
     }
     &:nth-child(2) {
-      background-image: url("../../images/profile_maruyama_200419-min.jpg");
+      background-image: url("../../../images/profile_maruyama_200419-min.jpg");
     }
     &:nth-child(3) {
-      background-image: url("../../images/profile_ohkura_200419-min.jpg");
+      background-image: url("../../../images/profile_ohkura_200419-min.jpg");
     }
     &:nth-child(4) {
-      background-image: url("../../images/profile_yasuda_200419-min.jpg");
+      background-image: url("../../../images/profile_yasuda_200419-min.jpg");
     }
     &:nth-child(5) {
-      background-image: url("../../images/profile_murakami_200419-min.jpg");
+      background-image: url("../../../images/profile_murakami_200419-min.jpg");
     }
   }
 }
