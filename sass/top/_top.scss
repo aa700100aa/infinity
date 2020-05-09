@@ -661,14 +661,27 @@
       padding: 35px 0 30px 11.3%;
     }
   }
-  .contentsLink_element {
+  //slick オーバーライド
+  .slick-slide {
     width: 200px;
     margin-right: 10px;
-    @include mediaQuery(desktopFollow) {
+    @include mediaQuery(tablet) {
       width: 300px;
+    }
+  }
+  //slick オーバーライド END
+  .contentsLink_element {
+    @include mediaQuery(desktop) {
+      width: 300px;
+      margin-right: 10px;
     }
     &:hover {
       opacity: 0.9;
+    }
+  }
+  .mod-contentsLinkEmpty {
+    @include mediaQuery(desktop) {
+      display: none;
     }
   }
   .contentsLink_text {

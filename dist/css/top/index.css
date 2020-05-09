@@ -1563,14 +1563,21 @@ footer {
     @media screen and (min-width: 993px) {
       .top .contentsLink_list {
         padding: 35px 0 30px 11.3%; } }
-  .top .contentsLink_element {
+  .top .slick-slide {
     width: 200px;
     margin-right: 10px; }
-    @media screen and (min-width: 750px) {
-      .top .contentsLink_element {
+    @media screen and (min-width: 750px) and (max-width: 992px) {
+      .top .slick-slide {
         width: 300px; } }
-    .top .contentsLink_element:hover {
-      opacity: 0.9; }
+  @media screen and (min-width: 993px) {
+    .top .contentsLink_element {
+      width: 300px;
+      margin-right: 10px; } }
+  .top .contentsLink_element:hover {
+    opacity: 0.9; }
+  @media screen and (min-width: 993px) {
+    .top .mod-contentsLinkEmpty {
+      display: none; } }
   .top .contentsLink_text {
     font-size: 11px;
     font-weight: bold;

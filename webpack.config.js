@@ -5,13 +5,12 @@ var path = require('path');
 var glob = require("glob");
 
 // filenameを取得するメソッドを追記
-// 後から使う
+// 後ほど使用
 String.prototype.filename = function(){
   return this.match(".+/(.+?)([\?#;].*)?$")[1];
 }
 
-// jsBasePath配下の.es6のpathも含めたファイルを取得する
-// _から始まるファイルはmoduleなので書き出す必要はないのでいらない
+// ./js/配下のindex.jsのファイルをpathも含めて取得する
 var targets = glob.sync(`./js/**/index.js`);
 
 // entryに入れるhash
@@ -22,10 +21,6 @@ targets.forEach(value => {
   var re = new RegExp(`./js/`);
   var key = value.replace(re, '');
 
-  // 確認用に取得したファイル名を出す
-  console.log('--------------------------')
-  console.log(key) 
-  console.log(value.filename()) 
   entries[key] = value;
 });
 
@@ -33,7 +28,7 @@ module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: "development",
-  // メインとなるJavaScriptファイル（エントリーポイント）
+  // 入力ファイル エントリーポイント
   entry: entries, //作成したhashをset
   // 出力ファイル
   output: {

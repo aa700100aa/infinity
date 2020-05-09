@@ -26,7 +26,7 @@ $(function () {
       });
       $('.js-contentsLinkSlider').on('setPosition', function () {
         //インラインスタイル オーバーライド
-        $('.js-contentsLinkEmpty').css('width', '11.3%');
+        $('.slick-slide').first().css('width', '11.3%');
       });
     } else if (mobileWidth.matches) {
       //モバイル
@@ -40,7 +40,7 @@ $(function () {
       });
       $('.js-contentsLinkSlider').on('setPosition', function () {
         //インラインスタイル オーバーライド
-        $('.js-contentsLinkEmpty').css('width', '50px');
+        $('.slick-slide').first().css('width', '50px');
       });
     } else {
       //デスクトップ
