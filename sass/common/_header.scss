@@ -79,10 +79,14 @@ header {
   @include mediaQuery(desktopFollow) {
     animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.53 infinite;
   }
+  //IE
+  @media all and (-ms-high-contrast: none) {
+    animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.7 infinite;
+  }
   //Edge
   @supports (-ms-ime-align: auto) {
     @include mediaQuery(desktopFollow) {
-      animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.5 infinite;
+      animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.6 infinite;
     }
   }
   @keyframes header_border {
@@ -261,6 +265,10 @@ header {
         animation-play-state: paused;
       }
     }
+  }
+  //IE
+  @media all and (-ms-high-contrast: none) {
+    animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.5 forwards;
   }
   //Edge
   @supports (-ms-ime-align: auto) {
