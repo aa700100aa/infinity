@@ -43,7 +43,7 @@ gulp.task("browserSync", function(done) {
       baseDir: "./" // ルートとなるディレクトリを指定
     }
   });
-  gulp.watch("./**", function(done) {
+  gulp.watch(['./dist/**','./index.html'], function(done) {
     browserSync.reload(); // ファイルに変更があれば同期しているブラウザをリロード
     done()
   });

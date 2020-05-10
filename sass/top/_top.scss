@@ -157,8 +157,9 @@
 /*------------------
   top
 -------------------*/
-.top {
-  overflow: hidden;
+  .top {
+    overflow: hidden;
+  }
   /*------------------
     hero
   -------------------*/
@@ -286,7 +287,7 @@
   }
   .hero_nav {
     position: absolute;
-    top: 5%;
+    top: 3%;
     left: 11.3%;
     right: auto;
     padding: 0;
@@ -296,17 +297,65 @@
     z-index: 1;
     mix-blend-mode: exclusion;
     height: 100%;
+    @media screen and (max-height:600px) and (max-width:1199px)  { 
+      top: 5%;
+    }
     @media screen and (min-height:600px) and (max-width:1125px) {
       left: auto;
       right: 700px;
     }
+    // Firefox
+    @media screen and (max-height:700px) and (min-width:1200px) {
+      @-moz-document url-prefix() {
+        top: 3%;
+      }
+    }
+    @media screen and (min-height:730px) and (max-width:1250px) {
+      @-moz-document url-prefix() {
+        left: auto;
+        right: 780px;
+      }
+    }
+    @media screen and (min-height:730px) and (max-width:1100px) {
+      @-moz-document url-prefix() {
+        left: 2%;
+        right: auto;
+      }
+    }
     //Edge
     @supports (-ms-ime-align: auto) {
       top: 1%;
+      @media screen and (max-height:600px) and (max-width:1199px)  { 
+        top: 3.5%;
+      }
     }
     //IE
     @media all and (-ms-high-contrast: none) {
+      top: 2%;
+      @media screen and (max-height:650px) and (max-width:1199px)  { 
+        top: 3.5%;
+      }
+    }
+  }
+  //safari
+  _::-webkit-full-page-media, _:future, :root .hero_nav {
+    top: 3%;
+  }
+  @media screen and (max-height:600px) and (min-width:1200px) {
+    _::-webkit-full-page-media, _:future, :root .hero_nav {
       top: 1%;
+    }
+  }
+  @media screen and (min-height:730px) and (max-width:1250px) {
+    _::-webkit-full-page-media, _:future, :root .hero_nav {
+      left: auto;
+      right: 780px;
+    }
+  }
+  @media screen and (min-height:730px) and (max-width:1100px) {
+    _::-webkit-full-page-media, _:future, :root .hero_nav {
+      left: 2%;
+      right: auto;
     }
   }
   .hero_link {
@@ -318,6 +367,7 @@
     font-size: 4em;
     text-align: left;
     font-size: 88px;
+    // safariのスタイルのみ後続に記載
     @media screen and (max-height:650px) {
       font-size: 11vh;
     }
@@ -326,6 +376,12 @@
     }
     @media screen and (max-height:600px) and (max-width:1199px)  { 
       font-size: 60px;
+    }
+    // Firefox
+    @media screen and (min-height:730px) and (max-width:1100px) {
+      @-moz-document url-prefix() {
+        font-size: 6.5vw;
+      }
     }
     a {
       position: relative;
@@ -385,6 +441,17 @@
     
     &:nth-child(6) a:before {
         content: "PROFILE"
+    }
+  }
+  // safari
+  @media screen and (min-height:730px) {
+    _::-webkit-full-page-media, _:future, :root .hero_link {
+      font-size: 98px;
+    }
+  }
+  @media screen and (min-height:730px) and (max-width:1100px) {
+    _::-webkit-full-page-media, _:future, :root .hero_link {
+      font-size: 6.5vw;
     }
   }
   .hero_scrollText {
@@ -628,6 +695,15 @@
   .contentsLink {
     position: relative;
     background-color: #f2f2f2;
+    //slick オーバーライド
+    .slick-slide {
+      width: 200px;
+      margin-right: 10px;
+      @include mediaQuery(tablet) {
+        width: 300px;
+      }
+    }
+    //slick オーバーライド END
   }
   .contentsLink_title {
     position: absolute;
@@ -661,15 +737,6 @@
       padding: 35px 0 30px 11.3%;
     }
   }
-  //slick オーバーライド
-  .slick-slide {
-    width: 200px;
-    margin-right: 10px;
-    @include mediaQuery(tablet) {
-      width: 300px;
-    }
-  }
-  //slick オーバーライド END
   .contentsLink_element {
     @include mediaQuery(desktop) {
       width: 300px;
@@ -1273,6 +1340,8 @@
       }
     }
   }
+  /*  release END
+  -------------------*/
   /*------------------
     profile
   -------------------*/
@@ -1357,5 +1426,9 @@
       background-image: url("../../../images/profile_murakami_200419-min.jpg");
     }
   }
-}
+  /*  profile END
+  -------------------*/
+
+/*  top END
+-------------------*/
 
