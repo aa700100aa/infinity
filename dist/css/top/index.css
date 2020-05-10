@@ -771,25 +771,25 @@ header {
 @-webkit-keyframes header_whiteMask {
   0% {
     opacity: 0; }
-  40% {
+  45% {
     opacity: 0; }
-  41% {
+  46% {
     opacity: 1; }
-  60% {
+  55% {
     opacity: 1; }
-  61% {
+  56% {
     opacity: 0; } }
 
 @keyframes header_whiteMask {
   0% {
     opacity: 0; }
-  40% {
+  45% {
     opacity: 0; }
-  41% {
+  46% {
     opacity: 1; }
-  60% {
+  55% {
     opacity: 1; }
-  61% {
+  56% {
     opacity: 0; } }
   @media screen and (min-width: 750px) and (max-width: 992px) {
     .header_whiteMask {
