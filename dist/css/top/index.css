@@ -753,6 +753,12 @@ header {
   opacity: 0;
   -webkit-animation: header_whiteMask 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -4200ms forwards;
           animation: header_whiteMask 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -4200ms forwards; }
+  @supports (-ms-ime-align: auto) {
+    .header_whiteMask {
+      display: none; } }
+  @media all and (-ms-high-contrast: none) {
+    .header_whiteMask {
+      display: none; } }
 
 @-webkit-keyframes header_whiteMask {
   0% {

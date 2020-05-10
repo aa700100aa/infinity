@@ -339,6 +339,14 @@ header {
   z-index: 12;
   background-color: #fff;
   opacity: 0;
+  //Edge
+  @supports (-ms-ime-align: auto) {
+    display: none;
+  }
+  //IE
+  @media all and (-ms-high-contrast: none) {
+    display: none;
+  }
   animation: header_whiteMask $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.6 forwards;
   @keyframes header_whiteMask {
     0% {
