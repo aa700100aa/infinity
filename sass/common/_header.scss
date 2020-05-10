@@ -19,6 +19,8 @@ header {
   position: relative;
 }
 .header_icon {
+  position: relative;
+  z-index: 13;
   width: 36px;
   height: auto;
   margin: 6px 0 0 11px;
@@ -106,7 +108,7 @@ header {
       width: 10px;
     }
   }
-  &:first-of-type {
+  &:nth-of-type(1) {
     transform:rotate(30deg);
     bottom: 11px;
     @include mediaQuery(tablet) {
@@ -119,7 +121,7 @@ header {
       bottom: 95px;
     }
   }
-  &:last-of-type {
+  &:nth-of-type(2) {
     transform:rotate(-30deg);
     top: 14px;
     @include mediaQuery(tablet) {
@@ -158,6 +160,7 @@ header {
 }
 .header_text {
   position: relative;
+  z-index: 11;
   padding-left: 13px;
   height: 36px;
   display: none;
@@ -210,7 +213,7 @@ header {
   @include mediaQuery(desktopFollow) {
     padding-left: 24px;
     height: 72px;
-    animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.5 forwards;
+    animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.55 forwards;
     @keyframes header_text {
       0% {
         transform: translateY(0);
@@ -224,12 +227,14 @@ header {
       }
       47% {
         animation-play-state: paused;
+        opacity: 1;
       }
       48% {
         animation-play-state: running;
+        opacity: 0;
       }
       49% {
-        opacity: 1;
+        opacity: 0;
       }
       50% {
         transform: translateY(-100%);
@@ -240,15 +245,17 @@ header {
         opacity: 0;
       }
       52% {
+        opacity: 0;
+      }
+      58% {
+        animation-play-state: running;
+        opacity: 0;
+      }
+      59% {
+        animation-play-state: paused;
         opacity: 1;
       }
-      53% {
-        animation-play-state: running;
-      }
-      54% {
-        animation-play-state: paused;
-      }
-      60% {
+      65% {
         transform: translateY(0);
         opacity: 1;
         animation-play-state: paused;
@@ -313,11 +320,69 @@ header {
     line-height: 1.2;
     font-size: 11px;
     letter-spacing: -.5px;
+    z-index: -1;
     @include mediaQuery(tablet) {
       font-size: 13px;
     }
     @include mediaQuery(desktop) {
       font-size: 15px;
+    }
+  }
+}
+.header_whiteMask {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 60px;
+  height: 72px;
+  width: 300px;
+  z-index: 12;
+  background-color: #fff;
+  opacity: 0;
+  animation: header_whiteMask $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.6 forwards;
+  @keyframes header_whiteMask {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    41% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    61% {
+      opacity: 0;
+    }
+  }
+  @include mediaQuery(tablet) {
+    left: calc(2.4vw + 80px);
+    width: calc(100vw - 607.88px);
+  }
+  @include mediaQuery(desktop) {
+    left: 121px;
+    width: 312px;
+  }
+  @include mediaQuery(desktopFollow) {
+    animation: header_whiteMask $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.55 forwards;
+    @keyframes header_whiteMask {
+      0% {
+        opacity: 0;
+      }
+      48% {
+        opacity: 0;
+      }
+      49% {
+        opacity: 1;
+      }
+      52% {
+        opacity: 1;
+      }
+      53% {
+        opacity: 0;
+      }
     }
   }
 }
