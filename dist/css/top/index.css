@@ -450,8 +450,8 @@ header {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
-  -webkit-animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2800ms forwards;
-          animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2800ms forwards; }
+  -webkit-animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3010ms forwards;
+          animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3010ms forwards; }
 
 @-webkit-keyframes header_text {
   0% {
@@ -771,25 +771,25 @@ header {
 @-webkit-keyframes header_whiteMask {
   0% {
     opacity: 0; }
-  46% {
+  33% {
     opacity: 0; }
-  47% {
+  34% {
     opacity: 1; }
-  57% {
+  54% {
     opacity: 1; }
-  58% {
+  55% {
     opacity: 0; } }
 
 @keyframes header_whiteMask {
   0% {
     opacity: 0; }
-  46% {
+  33% {
     opacity: 0; }
-  47% {
+  34% {
     opacity: 1; }
-  57% {
+  54% {
     opacity: 1; }
-  58% {
+  55% {
     opacity: 0; } }
   @media screen and (min-width: 750px) and (max-width: 992px) {
     .header_whiteMask {
