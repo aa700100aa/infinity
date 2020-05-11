@@ -1,0 +1,15 @@
+//初期化
+@import "../common/reset";
+//ライブラリ
+@import "../../lib/css/slick";
+//ブレイクポイント定義
+@import "../common/responsive";
+//変数定義
+@import "../common/config";
+//ヘッダー
+@import "../common/header";
+//フッター
+@import "../common/footer";
+
+//各ページごとのスタイル
+@import "./top";
