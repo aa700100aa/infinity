@@ -69,7 +69,7 @@ header {
   transform-origin: left center;
   opacity: 0;
   overflow: hidden;
-  animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.65 infinite;
+  animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.6 infinite;
   @include mediaQuery(tablet) {
     left: calc(2.4vw + 66px);
   }
