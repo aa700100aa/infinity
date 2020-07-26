@@ -11,7 +11,7 @@ String.prototype.filename = function(){
 }
 
 // ./js/配下のindex.jsのファイルをpathも含めて取得する
-var targets = glob.sync(`./js/**/index.js`);
+var targets = glob.sync(`./js/*.js`);
 
 // entryに入れるhash
 var entries = {};
