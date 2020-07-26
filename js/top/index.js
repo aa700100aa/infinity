@@ -87,14 +87,22 @@ var slick = require('slick-carousel');
   /*---------------------------------------------
     右クリック&キーボードショートカット 禁止
   -----------------------------------------------*/
+  //右クリック
   d.oncontextmenu = () => { return false; }
 
-  d.addEventListener('keydown',function(){
-    //"b"（keyCode=66）が押された場合は入力を無効にする
-    if(event.keyCode === 73){
-      event.preventDefault();
+  //keyCode = F12(123), keyCode = I(73)の場合はキーボード入力キャンセル
+  d.addEventListener('keydown', (e) => {
+    if((e.keyCode === 123) || (e.keyCode === 73)){
+      e.preventDefault();
     }
   });
+　/* document.onkeydown = function(e){
+    if (e.key === 'Meta' && e.key === 'Alt' && e.key === 'i') {
+      console.log(event.key);
+      e.preventDefault();
+      return false;
+    }
+  }; */
 
   w.addEventListener('load', () => {
     /*---------------------------------------------

@@ -65,13 +65,13 @@
 .opAnimation_logo {
   transform: translate(50%, 50%);
   position: absolute;
-  bottom: 50vh;
   right: 50vw;
+  bottom: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  @include mediaQuery(mobileOnly) {
-    bottom: 55vh;
+  @include mediaQuery(desktopFollow) {
+    bottom: 50vh;
   }
 }
 .opAnimation_icon {
@@ -147,7 +147,7 @@
     //KANJANI∞の各文字ごとにアニメーション開始タイミングを指定
     @for $i from 1 through 8 {
       &:nth-child(#{$i}) {
-        animation-delay: #{($opAnimationValue * 0.18) + (($i - 1) * 20)}ms;
+        animation-delay: #{($opAnimationValue * 0.18) + (($i - 1) * 0.02)}s;
       }
     }
   }
@@ -419,28 +419,28 @@
         transform: translateY(0);
       }
     }
-    &:nth-child(1) a:before {
+    .mod-news:before {
       content: "NEWS"
     }
     
-    &:nth-child(2) a:before {
-        content: "DISCOGRAPHY"
+    .mod-discography:before {
+      content: "DISCOGRAPHY"
     }
     
-    &:nth-child(3) a:before {
-        content: "MOVIE"
+    .mod-movie:before {
+      content: "MOVIE"
     }
     
-    &:nth-child(4) a:before {
-        content: "LIVE/STAGE"
+    .mod-live:before {
+      content: "LIVE/STAGE"
     }
     
-    &:nth-child(5) a:before {
-        content: "MEDIA"
+    .mod-media:before {
+      content: "MEDIA"
     }
     
-    &:nth-child(6) a:before {
-        content: "PROFILE"
+    .mod-profile:before {
+      content: "PROFILE"
     }
   }
   // safari
@@ -1410,19 +1410,19 @@
     @include mediaQuery(desktopFollow) {
       height: calc(100vh - 130px);
     }
-    &:nth-child(1) {
+    &.mod-yokoyama {
       background-image: url("../../../images/profile_yokoyama_200419-min.jpg");
     }
-    &:nth-child(2) {
+    &.mod-maruyama {
       background-image: url("../../../images/profile_maruyama_200419-min.jpg");
     }
-    &:nth-child(3) {
+    &.mod-ohkura {
       background-image: url("../../../images/profile_ohkura_200419-min.jpg");
     }
-    &:nth-child(4) {
+    &.mod-yasuda {
       background-image: url("../../../images/profile_yasuda_200419-min.jpg");
     }
-    &:nth-child(5) {
+    &.mod-murakami {
       background-image: url("../../../images/profile_murakami_200419-min.jpg");
     }
   }

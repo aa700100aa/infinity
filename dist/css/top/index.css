@@ -274,8 +274,8 @@ header {
   width: 36px;
   height: auto;
   margin: 6px 0 0 11px;
-  -webkit-animation: header_icon 7000ms ease-in-out 4340ms infinite;
-          animation: header_icon 7000ms ease-in-out 4340ms infinite; }
+  -webkit-animation: header_icon 7s ease-in-out 4.34s infinite;
+          animation: header_icon 7s ease-in-out 4.34s infinite; }
   @media screen and (min-width: 750px) and (max-width: 992px) {
     .header_icon {
       width: 56px; } }
@@ -285,13 +285,13 @@ header {
   @media screen and (min-width: 750px) {
     .header_icon {
       margin: 29px 0 29px 2.4vw;
-      -webkit-animation: header_icon 7000ms ease-in-out 3500ms infinite;
-              animation: header_icon 7000ms ease-in-out 3500ms infinite; } }
+      -webkit-animation: header_icon 7s ease-in-out 3.5s infinite;
+              animation: header_icon 7s ease-in-out 3.5s infinite; } }
   @supports (-ms-ime-align: auto) {
     @media screen and (min-width: 750px) {
       .header_icon {
-        -webkit-animation: header_icon 7000ms ease-in-out 1750ms infinite;
-                animation: header_icon 7000ms ease-in-out 1750ms infinite; } } }
+        -webkit-animation: header_icon 7s ease-in-out 1.75s infinite;
+                animation: header_icon 7s ease-in-out 1.75s infinite; } } }
 
 @-webkit-keyframes header_icon {
   0% {
@@ -338,8 +338,8 @@ header {
           transform-origin: left center;
   opacity: 0;
   overflow: hidden;
-  -webkit-animation: header_border 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) 4200ms infinite;
-          animation: header_border 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) 4200ms infinite; }
+  -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite;
+          animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite; }
   @media screen and (min-width: 750px) and (max-width: 992px) {
     .header_border {
       left: calc(2.4vw + 66px); } }
@@ -348,17 +348,17 @@ header {
       left: calc(2.4vw + 82px); } }
   @media screen and (min-width: 750px) {
     .header_border {
-      -webkit-animation: header_border 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) 3710ms infinite;
-              animation: header_border 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) 3710ms infinite; } }
+      -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 3.71s infinite;
+              animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 3.71s infinite; } }
   @media all and (-ms-high-contrast: none) {
     .header_border {
-      -webkit-animation: header_border 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) 4900ms infinite;
-              animation: header_border 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) 4900ms infinite; } }
+      -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.9s infinite;
+              animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.9s infinite; } }
   @supports (-ms-ime-align: auto) {
     @media screen and (min-width: 750px) {
       .header_border {
-        -webkit-animation: header_border 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) 4200ms infinite;
-                animation: header_border 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) 4200ms infinite; } } }
+        -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite;
+                animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite; } } }
 
 @-webkit-keyframes header_border {
   0% {
@@ -450,8 +450,8 @@ header {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
-  -webkit-animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3010ms forwards;
-          animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3010ms forwards; }
+  -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.01s forwards;
+          animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.01s forwards; }
 
 @-webkit-keyframes header_text {
   0% {
@@ -544,8 +544,8 @@ header {
     .header_text {
       padding-left: 24px;
       height: 72px;
-      -webkit-animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3850ms forwards;
-              animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3850ms forwards; }
+      -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.85s forwards;
+              animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.85s forwards; }
     @-webkit-keyframes header_text {
       0% {
         -webkit-transform: translateY(0);
@@ -642,8 +642,8 @@ header {
                 animation-play-state: paused; } } }
   @media all and (-ms-high-contrast: none) {
     .header_text {
-      -webkit-animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3500ms forwards;
-              animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3500ms forwards; } }
+      -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.5s forwards;
+              animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.5s forwards; } }
   @supports (-ms-ime-align: auto) {
     @media screen and (min-width: 750px) {
       .header_text {
@@ -652,8 +652,8 @@ header {
         -webkit-transform: translateY(100%);
                 transform: translateY(100%);
         opacity: 0;
-        -webkit-animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 490ms forwards;
-                animation: header_text 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 490ms forwards; }
+        -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 0.49s forwards;
+                animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite 0.49s forwards; }
       @-webkit-keyframes header_text {
         0% {
           -webkit-transform: translateY(100%);
@@ -759,8 +759,8 @@ header {
   z-index: 12;
   background-color: #fff;
   opacity: 0;
-  -webkit-animation: header_whiteMask 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2800ms forwards;
-          animation: header_whiteMask 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2800ms forwards; }
+  -webkit-animation: header_whiteMask 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2.8s forwards;
+          animation: header_whiteMask 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2.8s forwards; }
   @supports (-ms-ime-align: auto) {
     .header_whiteMask {
       display: none; } }
@@ -801,8 +801,8 @@ header {
       width: 312px; } }
   @media screen and (min-width: 750px) {
     .header_whiteMask {
-      -webkit-animation: header_whiteMask 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3850ms forwards;
-              animation: header_whiteMask 7000ms cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3850ms forwards; }
+      -webkit-animation: header_whiteMask 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.85s forwards;
+              animation: header_whiteMask 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.85s forwards; }
     @-webkit-keyframes header_whiteMask {
       0% {
         opacity: 0; }
@@ -1052,8 +1052,8 @@ footer {
   -webkit-transform: translate(50%, 50%);
           transform: translate(50%, 50%);
   position: absolute;
-  bottom: 50vh;
   right: 50vw;
+  bottom: 55vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1063,16 +1063,16 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-  @media screen and (max-width: 749px) {
+  @media screen and (min-width: 750px) {
     .opAnimation_logo {
-      bottom: 55vh; } }
+      bottom: 50vh; } }
 
 .opAnimation_icon {
   margin-right: 20px;
   opacity: 0; }
   .opAnimation_icon.mod-rotate.add-trigger {
-    -webkit-animation: opAnimation_icon 700ms ease-in-out forwards;
-            animation: opAnimation_icon 700ms ease-in-out forwards;
+    -webkit-animation: opAnimation_icon 0.7s ease-in-out forwards;
+            animation: opAnimation_icon 0.7s ease-in-out forwards;
     opacity: 1; }
 
 @-webkit-keyframes opAnimation_icon {
@@ -1133,8 +1133,8 @@ footer {
   .opAnimation_text.mod-rotate.add-trigger svg {
     -webkit-animation-name: opAnimation_text;
             animation-name: opAnimation_text;
-    -webkit-animation-duration: 200ms;
-            animation-duration: 200ms;
+    -webkit-animation-duration: 0.2s;
+            animation-duration: 0.2s;
     -webkit-animation-timing-function: ease-in-out;
             animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
@@ -1164,29 +1164,29 @@ footer {
     -webkit-animation-play-state: paused;
             animation-play-state: paused; } }
     .opAnimation_text.mod-rotate.add-trigger svg:nth-child(1) {
-      -webkit-animation-delay: 450ms;
-              animation-delay: 450ms; }
+      -webkit-animation-delay: 0.45s;
+              animation-delay: 0.45s; }
     .opAnimation_text.mod-rotate.add-trigger svg:nth-child(2) {
-      -webkit-animation-delay: 470ms;
-              animation-delay: 470ms; }
+      -webkit-animation-delay: 0.47s;
+              animation-delay: 0.47s; }
     .opAnimation_text.mod-rotate.add-trigger svg:nth-child(3) {
-      -webkit-animation-delay: 490ms;
-              animation-delay: 490ms; }
+      -webkit-animation-delay: 0.49s;
+              animation-delay: 0.49s; }
     .opAnimation_text.mod-rotate.add-trigger svg:nth-child(4) {
-      -webkit-animation-delay: 510ms;
-              animation-delay: 510ms; }
+      -webkit-animation-delay: 0.51s;
+              animation-delay: 0.51s; }
     .opAnimation_text.mod-rotate.add-trigger svg:nth-child(5) {
-      -webkit-animation-delay: 530ms;
-              animation-delay: 530ms; }
+      -webkit-animation-delay: 0.53s;
+              animation-delay: 0.53s; }
     .opAnimation_text.mod-rotate.add-trigger svg:nth-child(6) {
-      -webkit-animation-delay: 550ms;
-              animation-delay: 550ms; }
+      -webkit-animation-delay: 0.55s;
+              animation-delay: 0.55s; }
     .opAnimation_text.mod-rotate.add-trigger svg:nth-child(7) {
-      -webkit-animation-delay: 570ms;
-              animation-delay: 570ms; }
+      -webkit-animation-delay: 0.57s;
+              animation-delay: 0.57s; }
     .opAnimation_text.mod-rotate.add-trigger svg:nth-child(8) {
-      -webkit-animation-delay: 590ms;
-              animation-delay: 590ms; }
+      -webkit-animation-delay: 0.59s;
+              animation-delay: 0.59s; }
 
 /*  オープニングアニメーション END
 -------------------*/
@@ -1224,8 +1224,8 @@ footer {
   .hero_overlayPoster.add-displayNone {
     display: none; }
   .hero_overlayPoster.add-trigger {
-    -webkit-animation: poster 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1250ms forwards;
-            animation: poster 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1250ms forwards; }
+    -webkit-animation: poster 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.25s forwards;
+            animation: poster 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.25s forwards; }
 
 @-webkit-keyframes poster {
   0% {
@@ -1277,8 +1277,8 @@ footer {
     .hero_overlayGrid {
       height: 34.48%; } }
   .hero_overlayGrid.add-trigger {
-    -webkit-animation: hero_overlay_grid 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1750ms forwards;
-            animation: hero_overlay_grid 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 1750ms forwards; }
+    -webkit-animation: hero_overlay_grid 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.75s forwards;
+            animation: hero_overlay_grid 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.75s forwards; }
 
 @-webkit-keyframes hero_overlay_grid {
   0% {
@@ -1305,15 +1305,15 @@ footer {
             transform: scaleX(0); } }
     .hero_overlayGrid.add-trigger:nth-child(2) {
       top: 22vw;
-      -webkit-animation-delay: 1850ms;
-              animation-delay: 1850ms; }
+      -webkit-animation-delay: 1.85s;
+              animation-delay: 1.85s; }
       @media screen and (min-width: 750px) {
         .hero_overlayGrid.add-trigger:nth-child(2) {
           top: 33.33%; } }
     .hero_overlayGrid.add-trigger:nth-child(3) {
       top: 44vw;
-      -webkit-animation-delay: 1950ms;
-              animation-delay: 1950ms; }
+      -webkit-animation-delay: 1.95s;
+              animation-delay: 1.95s; }
       @media screen and (min-width: 750px) {
         .hero_overlayGrid.add-trigger:nth-child(3) {
           top: auto;
@@ -1324,10 +1324,10 @@ footer {
 
 @media screen and (max-width: 749px) {
   .hero_image {
-    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms, -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s, -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
     -webkit-transform: scale(1.2);
             transform: scale(1.2); }
     .hero_image.mod-scale.add-trigger {
@@ -1348,10 +1348,10 @@ footer {
 
 @media screen and (min-width: 750px) {
   .hero_image {
-    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms, -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s, -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
     -webkit-transform: translateX(30px);
             transform: translateX(30px); }
     .hero_image.mod-slideIn.add-trigger {
@@ -1446,10 +1446,10 @@ _::-webkit-full-page-media, _:future, :root .hero_nav {
     display: inline-block;
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
-    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-    transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms, -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms; }
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s, -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s; }
     @supports (-ms-ime-align: auto) {
       .hero_link a {
         color: #000; } }
@@ -1484,17 +1484,17 @@ _::-webkit-full-page-media, _:future, :root .hero_nav {
     .hero_link a.mod-fadeIn.add-trigger {
       -webkit-transform: translateY(0);
               transform: translateY(0); }
-  .hero_link:nth-child(1) a:before {
+  .hero_link .mod-news:before {
     content: "NEWS"; }
-  .hero_link:nth-child(2) a:before {
+  .hero_link .mod-discography:before {
     content: "DISCOGRAPHY"; }
-  .hero_link:nth-child(3) a:before {
+  .hero_link .mod-movie:before {
     content: "MOVIE"; }
-  .hero_link:nth-child(4) a:before {
+  .hero_link .mod-live:before {
     content: "LIVE/STAGE"; }
-  .hero_link:nth-child(5) a:before {
+  .hero_link .mod-media:before {
     content: "MEDIA"; }
-  .hero_link:nth-child(6) a:before {
+  .hero_link .mod-profile:before {
     content: "PROFILE"; }
 
 @media screen and (min-height: 730px) {
@@ -1595,10 +1595,10 @@ _::-webkit-full-page-media, _:future, :root .hero_nav {
     .hero_news {
       -webkit-transform: translateX(140px);
               transform: translateX(140px);
-      -webkit-transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-      transition: -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-      transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms;
-      transition: transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms, -webkit-transform 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 2000ms; }
+      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+      transition: -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+      transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s;
+      transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s, -webkit-transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s; }
       .hero_news.mod-slideIn.add-trigger {
         -webkit-transform: translateX(0);
                 transform: translateX(0); } }
@@ -2500,15 +2500,15 @@ _::-webkit-full-page-media, _:future, :root .hero_nav {
   @media screen and (min-width: 750px) {
     .profile_image {
       height: calc(100vh - 130px); } }
-  .profile_image:nth-child(1) {
+  .profile_image.mod-yokoyama {
     background-image: url("../../../images/profile_yokoyama_200419-min.jpg"); }
-  .profile_image:nth-child(2) {
+  .profile_image.mod-maruyama {
     background-image: url("../../../images/profile_maruyama_200419-min.jpg"); }
-  .profile_image:nth-child(3) {
+  .profile_image.mod-ohkura {
     background-image: url("../../../images/profile_ohkura_200419-min.jpg"); }
-  .profile_image:nth-child(4) {
+  .profile_image.mod-yasuda {
     background-image: url("../../../images/profile_yasuda_200419-min.jpg"); }
-  .profile_image:nth-child(5) {
+  .profile_image.mod-murakami {
     background-image: url("../../../images/profile_murakami_200419-min.jpg"); }
 
 /*  profile END
