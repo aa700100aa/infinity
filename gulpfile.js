@@ -12,7 +12,7 @@ const webpackConfig = require('./webpack.config');
 
 // style.scssをタスクを作成する
 gulp.task("sass", function () {
-  return gulp.src(['./sass/**/index.scss', '!./sass/common/'])// コンパイル対象のSassファイル
+  return gulp.src(['./sass/*.scss', '!./sass/common/'])// コンパイル対象のSassファイル
     .pipe(sass())
     .pipe(autoprefixer(
       {
@@ -22,7 +22,7 @@ gulp.task("sass", function () {
     .pipe(gulp.dest('dist/css'))
 });
 gulp.task('css', function (done) {
-  gulp.watch("./sass/**/*.scss", gulp.series('sass'));
+  gulp.watch(["sass/**/*.scss", "sass/*.scss"], gulp.series('sass'));
   done();
 });
 

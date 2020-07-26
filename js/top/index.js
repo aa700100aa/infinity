@@ -199,8 +199,8 @@ var slick = require('slick-carousel');
       video[i].pause();
     }
     //スクロール操作禁止解除
-    d.removeEventListener('touchmove', noScroll);
-    d.removeEventListener('mousewheel', noScroll);
+    d.removeEventListener('touchmove', noScroll, { passive: false });
+    d.removeEventListener('mousewheel', noScroll, { passive: false });
     d.body.classList.remove('add-ScrollProhibited');
   }
 
