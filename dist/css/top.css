@@ -352,13 +352,13 @@ header {
               animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 3.71s infinite; } }
   @media all and (-ms-high-contrast: none) {
     .header_border {
-      -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.9s infinite;
-              animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.9s infinite; } }
+      -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite;
+              animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite; } }
   @supports (-ms-ime-align: auto) {
     @media screen and (min-width: 750px) {
       .header_border {
-        -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite;
-                animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite; } } }
+        -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 3.5s infinite;
+                animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 3.5s infinite; } } }
 
 @-webkit-keyframes header_border {
   0% {
@@ -450,8 +450,8 @@ header {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
-  -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.01s forwards;
-          animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.01s forwards; }
+  -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -1.4s forwards;
+          animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -1.4s forwards; }
 
 @-webkit-keyframes header_text {
   0% {
@@ -544,8 +544,8 @@ header {
     .header_text {
       padding-left: 24px;
       height: 72px;
-      -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.85s forwards;
-              animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.85s forwards; }
+      -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.15s forwards;
+              animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.15s forwards; }
     @-webkit-keyframes header_text {
       0% {
         -webkit-transform: translateY(0);
@@ -798,11 +798,11 @@ header {
   @media screen and (min-width: 993px) {
     .header_whiteMask {
       left: 121px;
-      width: 312px; } }
+      width: 320px; } }
   @media screen and (min-width: 750px) {
     .header_whiteMask {
-      -webkit-animation: header_whiteMask 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.85s forwards;
-              animation: header_whiteMask 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.85s forwards; }
+      -webkit-animation: header_whiteMask 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.5s forwards;
+              animation: header_whiteMask 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -3.5s forwards; }
     @-webkit-keyframes header_whiteMask {
       0% {
         opacity: 0; }
