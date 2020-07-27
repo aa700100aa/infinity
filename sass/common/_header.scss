@@ -24,7 +24,7 @@ header {
   width: 36px;
   height: auto;
   margin: 6px 0 0 11px;
-  animation: header_icon $headerActionTime ease-in-out $headerActionTime * 0.62 infinite;
+  animation: header_icon $headerActionTime ease-in-out $headerActionTime * 0.1 infinite;
   @include mediaQuery(tablet) {
     width: 56px;
   }
@@ -69,7 +69,7 @@ header {
   transform-origin: left center;
   opacity: 0;
   overflow: hidden;
-  animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.6 infinite;
+  animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.1 infinite;
   @include mediaQuery(tablet) {
     left: calc(2.4vw + 66px);
   }
@@ -170,7 +170,7 @@ header {
   display: none;
   transform: translateY(0);
   opacity: 1;
-  animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.35 forwards;
+  animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.4 forwards;
   @keyframes header_text {
     0% {
       transform: translateY(0);

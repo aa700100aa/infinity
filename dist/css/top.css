@@ -274,8 +274,8 @@ header {
   width: 36px;
   height: auto;
   margin: 6px 0 0 11px;
-  -webkit-animation: header_icon 7s ease-in-out 4.34s infinite;
-          animation: header_icon 7s ease-in-out 4.34s infinite; }
+  -webkit-animation: header_icon 7s ease-in-out 0.7s infinite;
+          animation: header_icon 7s ease-in-out 0.7s infinite; }
   @media screen and (min-width: 750px) and (max-width: 992px) {
     .header_icon {
       width: 56px; } }
@@ -338,8 +338,8 @@ header {
           transform-origin: left center;
   opacity: 0;
   overflow: hidden;
-  -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite;
-          animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 4.2s infinite; }
+  -webkit-animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 0.7s infinite;
+          animation: header_border 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) 0.7s infinite; }
   @media screen and (min-width: 750px) and (max-width: 992px) {
     .header_border {
       left: calc(2.4vw + 66px); } }
@@ -450,8 +450,8 @@ header {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
-  -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2.45s forwards;
-          animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2.45s forwards; }
+  -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2.8s forwards;
+          animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2.8s forwards; }
 
 @-webkit-keyframes header_text {
   0% {
