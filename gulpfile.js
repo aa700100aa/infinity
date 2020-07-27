@@ -22,7 +22,7 @@ gulp.task("sass", function () {
     .pipe(gulp.dest('dist/css'))
 });
 gulp.task('css', function (done) {
-  gulp.watch(["sass/**/*.scss", "sass/*.scss"], gulp.series('sass'));
+  gulp.watch("sass/**/*.scss", gulp.series('sass'));
   done();
 });
 

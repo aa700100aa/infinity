@@ -1,8 +1,8 @@
-window.$ = require('jquery');
-var slick = require('slick-carousel');
+const slick = require('slick-carousel');
+//import 'slick-carousel';
+//import slick from 'slick-carousel';
 
 ((d, w) => {
-
   //jQuery
   /*---------------------------------------------
     contentsLink スライダー
