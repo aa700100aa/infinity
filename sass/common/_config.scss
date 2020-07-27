@@ -1,0 +1,66 @@
+/*------------------
+  追加 リセットスタイル
+-------------------*/
+body {
+  position: relative;
+  color: #000;
+  font-family: 'Noto Sans JP', 'Noto Sans CJK JP', 'Noto Sans Japanese', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+  margin-top: 92px;
+  //テキストの選択（ドラッグ）禁止
+  user-select:none;
+  @include mediaQuery(desktopFollow) {
+    margin-top: 130px;
+  }
+  &.add-ScrollProhibited {
+    // ios端末でのタッチスクロール操作の制御
+    touch-action: none;
+  }
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+  @include mediaQuery(mobile) {
+    // スマホ長押しダウンロード禁止
+    pointer-events: none;
+  }
+}
+
+video {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  //クリック時の青色のアウトライン無効化
+  outline : none;
+}
+
+/*------------------
+  フォントファイル読み込み
+-------------------*/
+@font-face {
+  font-family: 'BritishInseratMN';
+  src: url("../../font/font.woff") format("woff");
+}
+
+/*------------------
+  変数定義
+-------------------*/
+//フォント
+$primary: 'Barlow Condensed', sans-serif;
+$extra: 'BritishInseratMN', sans-serif;
+
+//ヘッダーの文字切り替えインターバル(jsで定義した値と同値)
+$headerActionTime: 7s;
+//オープニングアニメーションにかかる時間(jsで定義した値と同値)
+$opAnimationTime: 2.5s;
+$opAnimationValue: 2.5;
+//ベジェ曲線の値
+$bezierValue: cubic-bezier(0.785, 0.135, 0.15, 0.86);
