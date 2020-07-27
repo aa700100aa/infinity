@@ -450,8 +450,8 @@ header {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
-  -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -1.4s forwards;
-          animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -1.4s forwards; }
+  -webkit-animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2.45s forwards;
+          animation: header_text 7s cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite -2.45s forwards; }
 
 @-webkit-keyframes header_text {
   0% {
