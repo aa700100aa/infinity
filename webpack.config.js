@@ -11,7 +11,7 @@ String.prototype.filename = function(){
 }
 
 // ./js/配下のindex.jsのファイルをpathも含めて取得する
-var targets = glob.sync(`./js/**/index.js`);
+var targets = glob.sync(`./js/*.js`);
 
 // entryに入れるhash
 var entries = {};
@@ -27,7 +27,7 @@ targets.forEach(value => {
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
-  mode: "development",
+  mode: "production",
   // 入力ファイル エントリーポイント
   entry: entries, //作成したhashをset
   // 出力ファイル
@@ -55,5 +55,11 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
+  ]
 };

@@ -24,7 +24,7 @@ header {
   width: 36px;
   height: auto;
   margin: 6px 0 0 11px;
-  animation: header_icon $headerActionTime ease-in-out $headerActionTime * 0.62 infinite;
+  animation: header_icon $headerActionTime ease-in-out $headerActionTime * 0.1 infinite;
   @include mediaQuery(tablet) {
     width: 56px;
   }
@@ -69,7 +69,7 @@ header {
   transform-origin: left center;
   opacity: 0;
   overflow: hidden;
-  animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.6 infinite;
+  animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.1 infinite;
   @include mediaQuery(tablet) {
     left: calc(2.4vw + 66px);
   }
@@ -81,12 +81,12 @@ header {
   }
   //IE
   @media all and (-ms-high-contrast: none) {
-    animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.7 infinite;
+    animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.6 infinite;
   }
   //Edge
   @supports (-ms-ime-align: auto) {
     @include mediaQuery(desktopFollow) {
-      animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.6 infinite;
+      animation: header_border $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) $headerActionTime * 0.5 infinite;
     }
   }
   @keyframes header_border {
@@ -170,7 +170,7 @@ header {
   display: none;
   transform: translateY(0);
   opacity: 1;
-  animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.43 forwards;
+  animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.4 forwards;
   @keyframes header_text {
     0% {
       transform: translateY(0);
@@ -217,7 +217,7 @@ header {
   @include mediaQuery(desktopFollow) {
     padding-left: 24px;
     height: 72px;
-    animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.55 forwards;
+    animation: header_text $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.45 forwards;
     @keyframes header_text {
       0% {
         transform: translateY(0);
@@ -334,71 +334,6 @@ header {
     }
     @include mediaQuery(desktop) {
       font-size: 15px;
-    }
-  }
-}
-.header_whiteMask {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 60px;
-  height: 72px;
-  width: 300px;
-  z-index: 12;
-  background-color: #fff;
-  opacity: 0;
-  //Edge
-  @supports (-ms-ime-align: auto) {
-    display: none;
-  }
-  //IE
-  @media all and (-ms-high-contrast: none) {
-    display: none;
-  }
-  animation: header_whiteMask $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.4 forwards;
-  @keyframes header_whiteMask {
-    0% {
-      opacity: 0;
-    }
-    33% {
-      opacity: 0;
-    }
-    34% {
-      opacity: 1;
-    }
-    54% {
-      opacity: 1;
-    }
-    55% {
-      opacity: 0;
-    }
-  }
-  @include mediaQuery(tablet) {
-    left: calc(2.4vw + 80px);
-    width: calc(100vw - 607.88px);
-  }
-  @include mediaQuery(desktop) {
-    left: 121px;
-    width: 312px;
-  }
-  @include mediaQuery(desktopFollow) {
-    animation: header_whiteMask $headerActionTime cubic-bezier(0.01, 0.01, 0.01, 0.81) infinite $headerActionTime * -0.55 forwards;
-    @keyframes header_whiteMask {
-      0% {
-        opacity: 0;
-      }
-      48% {
-        opacity: 0;
-      }
-      49% {
-        opacity: 1;
-      }
-      52% {
-        opacity: 1;
-      }
-      53% {
-        opacity: 0;
-      }
     }
   }
 }

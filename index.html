@@ -12,16 +12,16 @@
     <meta property="og:title" content="関ジャニ∞ (エイト) / INFINITY RECORDS 公式サイト"/>
     <meta property="og:description" content="関ジャニ∞ (エイト) の自主レーベル INFINITY RECORDS (インフィニティ・レコーズ) の公式サイト" />
     <meta property="og:site_name" content="関ジャニ∞ (エイト) / INFINITY RECORDS 公式サイト"/>
-    <meta property="og:image" content="https://www.infinity-r.jp/wp-content/uploads/2018/12/ogp.png"/>
+    <meta property="og:image" content="https://aa700100aa.github.io/infinity/images/ogp_image_200727-min.png"/>
     <link rel="canonical" href="https://aa700100aa.github.io/infinity/">
-    <link rel="apple-touch-icon-precomposed" href="images/ogp-min.png">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon-min.png">
     <link rel="icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/top/index.css">
+    <link rel="stylesheet" href="dist/css/top.css">
   </head>
   <body>
-    <div class="opAnimation js-opAnimation">
+    <div id="js-opAnimation" class="opAnimation">
       <div class="opAnimation_logo">
         <div class="opAnimation_icon mod-rotate js-trigger">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36">
@@ -73,7 +73,7 @@
         <div class="header_border js-headerBorder"></div>
         <ul class="header_detail">
           <li class="header_text js-headerText add-active">
-            <img class="header_image" src="images/header_logo_200419.svg" alt="関ジャニ&infin; (エイト)"">
+            <img class="header_image" src="images/header_logo_200419.svg" alt="関ジャニ&infin; (エイト)">
           </li>
           <li class="header_text js-headerText">
             <p>関ジャニ&infin;アプリで、関ジャニ&infin;を持ち歩こう！</p>
@@ -82,7 +82,6 @@
             <p>ニューシングル「友よ」発売中！</p>
           </li>
         </ul>
-        <div class="header_whiteMask"></div>
       </div>
       <nav class="header_nav">
         <ul class="header_list">
@@ -97,20 +96,20 @@
       </nav>
     </header>
     <main class="top">
-      <div class="hero_overlayPoster mod-sp_only js-heroOverlayPoster js-trigger"></div>
+      <div id="js-heroOverlayPoster" class="hero_overlayPoster mod-sp_only js-trigger"></div>
       <section class="hero">
-        <div class="hero_overlayGrids js-heroOverlayGrids">
+        <div id="js-heroOverlayGrids" class="hero_overlayGrids">
           <div class="hero_overlayGrid js-trigger"></div>
           <div class="hero_overlayGrid js-trigger"></div>
           <div class="hero_overlayGrid js-trigger"></div>
         </div>
         <ul class="hero_nav mod-sp">
-          <li class="hero_link"><a class="js-trigger mod-fadeIn" href="">NEWS</a></li>
-          <li class="hero_link"><a class="js-trigger mod-fadeIn" href="">DISCOGRAPHY</a></li>
-          <li class="hero_link"><a class="js-trigger mod-fadeIn" href="">MOVIE</a></li>
-          <li class="hero_link"><a class="js-trigger mod-fadeIn" href="">LIVE/STAGE</a></li>
-          <li class="hero_link"><a class="js-trigger mod-fadeIn" href="">MEDIA</a></li>
-          <li class="hero_link"><a class="js-trigger mod-fadeIn" href="">PROFILE</a></li>
+          <li class="hero_link"><a class="js-trigger mod-fadeIn mod-news" href="">NEWS</a></li>
+          <li class="hero_link"><a class="js-trigger mod-fadeIn mod-discography" href="">DISCOGRAPHY</a></li>
+          <li class="hero_link"><a class="js-trigger mod-fadeIn mod-movie" href="">MOVIE</a></li>
+          <li class="hero_link"><a class="js-trigger mod-fadeIn mod-live" href="">LIVE/STAGE</a></li>
+          <li class="hero_link"><a class="js-trigger mod-fadeIn mod-media" href="">MEDIA</a></li>
+          <li class="hero_link"><a class="js-trigger mod-fadeIn mod-profile" href="">PROFILE</a></li>
         </ul>
         <h1 class="hero_title">
           <picture>
@@ -274,11 +273,11 @@
       <div class="profile mod-opacity js-inView">
         <h2 class="profile_title mod-fadeIn js-inView">PROFILE</h2>
         <div class="profile_imageWrap">
-          <div class="profile_image"></div>
-          <div class="profile_image"></div>
-          <div class="profile_image"></div>
-          <div class="profile_image"></div>
-          <div class="profile_image"></div>
+          <div class="profile_image mod-yokoyama"></div>
+          <div class="profile_image mod-maruyama"></div>
+          <div class="profile_image mod-ohkura"></div>
+          <div class="profile_image mod-yasuda"></div>
+          <div class="profile_image mod-murakami"></div>
         </div>
       </div>
     </main>
@@ -300,6 +299,6 @@
       </a>
       <p class="footer_copyright"><small>© 2014 INFINITY RECORDS, a division of J Storm Inc.</small></p>
     </footer>
-    <script src="dist/js/top/index.js"></script>
+    <script src="dist/js/top.js"></script>
   </body>
 </html>

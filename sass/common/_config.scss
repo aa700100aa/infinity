@@ -47,7 +47,7 @@ a {
 -------------------*/
 @font-face {
   font-family: 'BritishInseratMN';
-  src: url("../../../font/font.woff") format("woff");
+  src: url("../../font/font.woff") format("woff");
 }
 
 /*------------------
@@ -58,9 +58,9 @@ $primary: 'Barlow Condensed', sans-serif;
 $extra: 'BritishInseratMN', sans-serif;
 
 //ヘッダーの文字切り替えインターバル(jsで定義した値と同値)
-$headerActionTime: 7000ms;
+$headerActionTime: 7s;
 //オープニングアニメーションにかかる時間(jsで定義した値と同値)
-$opAnimationTime: 2500ms;
-$opAnimationValue: 2500;
+$opAnimationTime: 2.5s;
+$opAnimationValue: 2.5;
 //ベジェ曲線の値
 $bezierValue: cubic-bezier(0.785, 0.135, 0.15, 0.86);
