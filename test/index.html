@@ -47,18 +47,24 @@
         <source media="(max-width: 749px)" srcset="../images/mobile/hero_200419-min.jpg">
         <img class="hero_image js-trigger mod-scale mod-slideIn" src="../images/hero_200419-min.jpg" alt="関ジャニ&infin; (エイト)">
       </picture>
-      <div class="darkBox">
+      <div data-smooth-position="#fifth" class="js-smooth">fifth</div>
+      <div class="darkBox js-inView">
+        first
       </div>
-      <div class="darkBox">
+      <div class="darkBox js-inView">
+        second
       </div>
-      <div class="darkBox">
+      <div class="darkBox js-inView">
+        third
       </div>
-      <div class="darkBox">
+      <div id="fifth" class="darkBox js-inView">
+        fourth
       </div>
-      <div class="darkBox">
+      <div class="darkBox js-inView">
+        fifth
       </div>
 
-      <a href="#" class="backToTop">TOP</a>
+      <div data-smooth-position="#" class="backToTop js-smooth">TOP</div>
 
       </div>
     </main>

@@ -128,7 +128,19 @@ img {
   width: 100%;
   height: 300px;
   margin-top: 300px;
-  background-color: #000; }
+  background-color: #000;
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  color: #fff; }
+  .darkBox.add-inView {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: 1s opacity ease-out, 1s -webkit-transform ease-out;
+    transition: 1s opacity ease-out, 1s -webkit-transform ease-out;
+    transition: 1s opacity ease-out, 1s transform ease-out;
+    transition: 1s opacity ease-out, 1s transform ease-out, 1s -webkit-transform ease-out; }
 
 /* モーダルCSSここから */
 .modalArea {

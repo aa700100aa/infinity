@@ -12,6 +12,14 @@ img {
   height: 300px;
   margin-top: 300px;
   background-color: #000;
+  opacity: 0;
+  transform: translateY(50%);
+  color: #fff;
+  &.add-inView {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s opacity ease-out, 1s transform ease-out;
+  }
 }
 
 /* モーダルCSSここから */
