@@ -25,43 +25,84 @@
 
     </header>
     <main class="top">
-      <div class="container">
-        <button id="openModal">Open modal</button>
+      <div class="topBox">
       </div>
-      
-      <!-- モーダルエリアここから -->
-      <section id="modalArea" class="modalArea">
-        <div id="modalBg" class="modalBg"></div>
-        <div class="modalWrapper">
-          <div class="modalContents">
-            <h2>Here are modal with vanilla JS - apply scroll prevent!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <div class="localNavWrap js-localNav">
+        <ul class="localNav">
+          <li data-smooth-position="#tab" class="localNav_item js-smooth">tab</li>
+          <li data-smooth-position="#accordion" class="localNav_item js-smooth">accordion</li>
+          <li data-smooth-position="#inline" class="localNav_item js-smooth">youtube(inline)</li>
+          <li data-smooth-position="#modal" class="localNav_item js-smooth">modal</li>
+        </ul>
+      </div>
+      <div id="tab" class="tab">
+        <ul class="tab_titleWrap">
+          <li class="tab_title mod-red js-tabTitle is-active">Tab-A</li>
+          <li class="tab_title mod-blue js-tabTitle">Tab-B</li>
+          <li class="tab_title mod-green js-tabTitle">Tab-C</li>
+        </ul>
+        <ul class="tab_contentsWrap">
+          <li class="tab_contents mod-red js-tabContent is-show">
+            <div class="tab_contentsItem mod-red"></div>
+            <div class="tab_contentsItem mod-red"></div>
+            <div class="tab_contentsItem mod-red"></div>
+            <div class="tab_contentsItem mod-red"></div>
+          </li>
+          <li class="tab_contents mod-blue js-tabContent">
+            <div class="tab_contentsItem mod-blue"></div>
+            <div class="tab_contentsItem mod-blue"></div>
+            <div class="tab_contentsItem mod-blue"></div>
+            <div class="tab_contentsItem mod-blue"></div>
+          </li>
+          <li class="tab_contents mod-green js-tabContent">
+            <div class="tab_contentsItem mod-green"></div>
+            <div class="tab_contentsItem mod-green"></div>
+            <div class="tab_contentsItem mod-green"></div>
+            <div class="tab_contentsItem mod-green"></div>
+          </li>
+        </ul>
+      </div>
+      <div id="accordion" class="darkBox js-inView">
+        アコーディオン
+      </div>
+      <div id="inline" class="inline">
+        <div class="inline_player js-inlinePlayer js-inView">
+          <div id="sample01"></div>
+        </div>
+      </div>
+      <div id="modal" class="modal">
+        <div class="modal_triggerWrap">
+          <div class="js-modalTrigger modal_trigger js-inView">
+            ポップアップ1
           </div>
-          <div id="closeModal" class="closeModal">
-            ×
+          <div class="js-modalTrigger modal_trigger js-inView">
+            ポップアップ2
+          </div>
+          <div class="js-modalTrigger modal_trigger js-inView">
+            ポップアップ3
           </div>
         </div>
-      </section>
-      <!-- モーダルエリアここまで -->
-      <picture>
-        <source media="(max-width: 749px)" srcset="../images/mobile/hero_200419-min.jpg">
-        <img class="hero_image js-trigger mod-scale mod-slideIn" src="../images/hero_200419-min.jpg" alt="関ジャニ&infin; (エイト)">
-      </picture>
-      <div data-smooth-position="#fifth" class="js-smooth">fifth</div>
-      <div class="darkBox js-inView">
-        first
-      </div>
-      <div class="darkBox js-inView">
-        second
-      </div>
-      <div class="darkBox js-inView">
-        third
-      </div>
-      <div id="fifth" class="darkBox js-inView">
-        fourth
-      </div>
-      <div class="darkBox js-inView">
-        fifth
+        <div id="js-modalArea" class="modal_area">
+          <div class="modal_background js-closeModalTrigger"></div>
+          <div class="modal_contentWrap">
+            <div class="modal_content js-modalContent">
+              <div class="modal_playerWrap">
+                <div id="sample02"></div>
+              </div>
+            </div>
+            <div class="modal_content js-modalContent">
+              <div class="modal_playerWrap">
+                <div id="sample03"></div>
+              </div>
+            </div>
+            <div class="modal_content js-modalContent">
+              <div class="modal_playerWrap">
+                <div id="sample04"></div>
+              </div>
+            </div>
+            <div class="modal_close js-closeModalTrigger"></div>
+          </div>
+        </div>
       </div>
 
       <div data-smooth-position="#" class="backToTop js-smooth">TOP</div>
@@ -70,6 +111,7 @@
     </main>
     <footer>
     </footer>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="../dist/js/test.js"></script>
   </body>
 </html>

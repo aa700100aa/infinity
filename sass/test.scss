@@ -6,24 +6,142 @@
 img {
   width: 100%;
 }
-
+.topBox {
+  width: 100%;
+  height: 800px;
+}
 .darkBox {
   width: 100%;
   height: 300px;
   margin-top: 300px;
   background-color: #000;
   opacity: 0;
-  transform: translateY(50%);
   color: #fff;
   &.add-inView {
     opacity: 1;
-    transform: translateY(0);
     transition: 1s opacity ease-out, 1s transform ease-out;
   }
 }
+.localNavWrap {
 
-/* モーダルCSSここから */
-.modalArea {
+}
+.localNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  &.add-fixed {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+.localNav_item {
+  padding: 15px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.tab {
+  margin: 80px auto;
+  max-width: 1080px;
+}
+.tab_titleWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab_title {
+  width: 33.33%;
+  text-align: center;
+  cursor: pointer;
+  &.mod-red {
+    background-color: #FFD5EC;
+  }
+  &.mod-blue {
+    background-color: #D9E5FF;
+  }
+  &.mod-green {
+    background-color: #CEF9DC;
+  }
+} 
+.tab_contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  display: none;
+  box-sizing:border-box;
+  padding: 20px;
+  &.is-show {
+    display: block;
+  }
+  &.mod-red {
+    background-color: #FFD5EC;
+  }
+  &.mod-blue {
+    background-color: #D9E5FF;
+  }
+  &.mod-green {
+    background-color: #CEF9DC;
+  }
+}
+.tab_contentsItem {
+  width: 20%;
+  height: 100px;
+  display: inline-block;
+  &.mod-red {
+    background-color: #FF0461;
+  }
+  &.mod-blue {
+    background-color: #005FFF;
+  }
+  &.mod-green {
+    background-color: #00F9A9;
+  }
+}
+.inline {
+  margin: 300px auto;
+  position:relative;
+  max-width: 960px;
+}
+.inline_player {
+  padding-top: 56.25%;
+  width: 100%;
+  & iframe{
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+  }
+  &.add-inView {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: 1s opacity ease-out, 1s transform ease-out;
+  }
+}
+.modal {
+  margin-top: 300px;
+}
+.modal_triggerWrap {
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal_trigger {
+  width: 30%;
+  height: 100px;
+  background-color: aquamarine;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: center;
+  color: #000;
+}
+.modal_area {
   visibility: hidden; /* displayではなくvisibility */
   opacity : 0;
   position: fixed;
@@ -33,55 +151,84 @@ img {
   width: 100%;
   height: 100%;
   transition: .4s;
-  overflow-y: scroll;
+  &.is-show { /* モーダル表示用クラス */
+    visibility: visible;
+    opacity : 1;
+  }
 }
 
-.modalBg {
+.modal_background {
   width: 100%;
   height: 100%;
   background-color: rgba(30,30,30,0.9);
 }
-
-.modalWrapper {
+.modal_content {
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform:translate(-50%,-50%);
-  width: 70%;
-  height: 250px;
-  max-width: 500px;
-  padding: 10px 30px;
-  background-color: #fff;
-  overflow: auto;
+  bottom: 50%;
+  right: 50%;
+  width: 100%;
+  transform: translate(50%, 50%);
+  @include mediaQuery() { 
+    width: 100vh;
+    min-width: 800px;
+  }
+  &.is-show {
+    visibility: visible;
+    opacity : 1;
+  }
 }
-
-.closeModal {
+.modal_playerWrap {
+  position:relative;
+  width: 100%;
+  padding-top: 56.25%;
+  & iframe{
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+  }
+}
+.modal_close{
+  display: inline-block;
+  padding: 5vw 0;
   position: absolute;
-  top: 0.5rem;
-  right: 1rem;
+  top: 3%;
+  right: 3%;
   cursor: pointer;
+  transition: transform .45s;
+  @include mediaQuery() {
+    padding: 25px 0;
+    &:hover {
+      transform: rotate(180deg) translate(0,0);
+      transition: transform .45s;
+    }
+  }
+  &:before, &:after {
+    display: block;
+    content: "";
+    width: 10vw;
+    height: 1px;
+    background: #fff;
+    @include mediaQuery() {
+      width: 50px;
+    }
+  }
+  &:before {
+    transform: rotate(-45deg);
+  }
+  &:after {
+    transform: rotate(45deg);
+  }
 }
 
-.is-show { /* モーダル表示用クラス */
-  visibility: visible;
-  opacity : 1;
-}
-/* モーダルCSSここまで */
-
-
-/* 以下ボタンスタイル */
-button {
-  padding: 1rem 2rem;
-  font-weight: bold;
-  background-color: transparent;
-  border: 2px solid #282828;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
+footer {
+  width: 100%;
+  height: 500px;
+  margin-top: 300px;
+  background-color: aqua;
 }
 
 .backToTop {

@@ -38,10 +38,11 @@ gulp.task('js', function (done) {
 
 //ブラウザシンク
 gulp.task("browserSync", function(done) {
-  browserSync({
+  browserSync.init({
     server: {
       baseDir: "./" // ルートとなるディレクトリを指定
-    }
+    },
+    port: 3000
   });
   gulp.watch(['./dist/**','./index.html'], function(done) {
     browserSync.reload(); // ファイルに変更があれば同期しているブラウザをリロード
