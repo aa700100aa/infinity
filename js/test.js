@@ -1,4 +1,12 @@
 ((d, w) => {
+  // IFrame Player API の読み込み
+  //youtube API
+    // Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
   w.addEventListener('load', () => {
     /**
      * スクロールイベント
@@ -117,53 +125,24 @@
       youtoube API
     ---------------------------*/
 
-    // 埋め込むyoutubeのIDと埋め込むエリアを指定
-    var ytData = [
-      {
-        id: '-fxi9fqYx74',
-        area: 'sample01'
-      },
-      {
-        id: 'xl2hrLb3ESw',
-        area: 'sample02'
-      },
-      {
-        id: 'JDyXSvFHW9Y',
-        area: 'sample03'
-      },
-      {
-        id: '5ZHqijYQ_Sg',
-        area: 'sample04'
-      }
-    ];
-
-    // 各プレーヤー格納用配列
-    var ytPlayer = [];
-
-    (() => {
-      for (var i = 0; i < ytData.length; i++) {
-        ytPlayer[i] = new YT.Player(ytData[i]['area'], {
-          videoId: ytData[i]['id'],
-          playerVars: {
-            loop: 1,//0:ループしない 1:ループする 1の場合playlist設定必須
-            playlist: ytData[i]['id'],//次に流すYoutubeのID
-            controls: 1,//コントローラー無し
-            playsinline: 1//iOSの動画再生制御
-            //autoplay: 1//オートプレイ
-          },
-          events: {
-            'onReady': onPlayerReady
-          }
-        });
-      }
-    })();
-
-    function onPlayerReady(event) {
-      //event.target.playVideo();
-      event.target.mute(); //デフォルト：mute
-      //event.target.playVideo();
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('sample01', {
+        height: '360',
+        width: '640',
+        videoId: 'M7lc1UVf-VE',
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
     }
 
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+
+    onYouTubeIframeAPIReady();
     /*-------------------------
       youtube インライン再生
     ---------------------------*/
